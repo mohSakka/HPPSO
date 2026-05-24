@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hppso"
+version = "1.0.0"
+description = "Human Personality Based Particle Swarm Optimization with benchmarking suite"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+]
+
+[project.optional-dependencies]
+cec2011 = ["minionpy>=0.1"]
+stats = ["scikit-posthocs>=0.7"]
+all = ["minionpy>=0.1", "scikit-posthocs>=0.7"]
+
+[project.scripts]
+hppso-benchmark-classical = "hppso.experiments.benchmark_classical:main"
+hppso-benchmark-cec2011 = "hppso.experiments.benchmark_cec2011:main"
+hppso-train-nn = "hppso.experiments.train_neural_network:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
