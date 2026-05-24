@@ -1,0 +1,10 @@
+algorithm,algorithm_internal,total_wins,total_ties,normalized_score
+CMAES,CMAES,8,0,100.0
+HPPSO,HPPSO_Modified,7,0,87.5
+GWO,GWO,6,0,75.0
+SHADE,SHADE,5,0,62.5
+PSO-M,PSO-m,4,0,50.0
+GA-MPC,GA-MPC,3,0,37.5
+PSO-RIW,PSO-RIW,2,0,25.0
+PSO,Original PSO,1,0,12.5
+CSA,CSA,0,0,0.0

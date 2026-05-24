@@ -1,0 +1,10 @@
+algorithm,average_rank
+SHADE,1.85
+CMAES,2.75
+GA-MPC,3.65
+HPPSO,4.2
+PSO-RIW,5.9
+GWO,5.95
+PSO-M,5.95
+PSO,6.3
+CSA,8.45

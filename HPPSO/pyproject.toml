@@ -25,6 +25,7 @@ all = ["minionpy>=0.1", "scikit-posthocs>=0.7"]
 hppso-benchmark-classical = "hppso.experiments.benchmark_classical:main"
 hppso-benchmark-cec2011 = "hppso.experiments.benchmark_cec2011:main"
 hppso-train-nn = "hppso.experiments.train_neural_network:main"
+hppso-reproduce-paper = "reproduction.run_reproduction:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
