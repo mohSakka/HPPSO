@@ -1,0 +1,27 @@
+name: classical_30d
+experiment_type: classical
+description: >
+  30D shifted classical benchmark over 20 functions. Matches paper
+  Tables 2/4/6 and Figure 7. ~10 minutes on a laptop with 20 runs.
+
+dim: 30
+runs: 20
+pop_size: 30
+max_iters: 500
+seed: 42
+
+algorithms:
+  - HPPSO
+  - Original PSO
+  - PSO-m
+  - PSO-RIW
+  - SHADE
+  - GWO
+  - CMA-ES
+  - Sep-CMA-ES
+  - GA-MPC
+  - CSA
+
+output:
+  save_csv: true
+  save_json: true
