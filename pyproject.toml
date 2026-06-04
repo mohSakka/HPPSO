@@ -14,6 +14,7 @@ dependencies = [
     "pandas>=2.0",
     "scipy>=1.10",
     "scikit-learn>=1.3",
+    "pyyaml>=6.0",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +27,11 @@ hppso-benchmark-classical = "hppso.experiments.benchmark_classical:main"
 hppso-benchmark-cec2011 = "hppso.experiments.benchmark_cec2011:main"
 hppso-train-nn = "hppso.experiments.train_neural_network:main"
 hppso-reproduce-paper = "reproduction.run_reproduction:main"
+hppso-run-experiment = "experiments.run:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["src", "."]
+include = ["hppso*", "reproduction*", "experiments*"]
+
+[tool.uv]
+package = true

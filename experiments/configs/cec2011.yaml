@@ -1,0 +1,27 @@
+name: cec2011
+experiment_type: cec2011
+description: >
+  CEC2011 real-world benchmark (22 problems via minionpy).
+  Requires the optional 'cec2011' extra: uv sync --extra cec2011.
+  Matches paper Tables 8/9/10.
+
+runs: 10
+pop_size: 200
+max_iters: 1000
+seed: 42
+
+algorithms:
+  - HPPSO
+  - Original PSO
+  - PSO-m
+  - PSO-RIW
+  - SHADE
+  - GWO
+  - CMA-ES
+  - Sep-CMA-ES
+  - GA-MPC
+  - CSA
+
+output:
+  save_csv: true
+  save_json: true

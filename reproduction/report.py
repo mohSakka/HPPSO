@@ -9,7 +9,7 @@ from typing import Any
 import numpy as np
 
 from reproduction.aggregate import average_ranks, summarize_performance, wilcoxon_pairwise_scores
-from reproduction.config import REFERENCE_VALUES, REPO_ROOT
+from reproduction.config import ARTIFACTS_DIR, REFERENCE_VALUES, REPO_ROOT
 from reproduction.schema import MergedDataset
 
 
@@ -207,7 +207,8 @@ def save_report(
     shift_manifest: dict[int, dict] | None = None,
     path: Path | None = None,
 ) -> Path:
-    path = path or (REPO_ROOT / "REPRODUCTION_REPORT.md")
+    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+    path = path or (ARTIFACTS_DIR / "REPRODUCTION_REPORT.md")
     schema = [
         "",
         "## Inferred Result Schema",

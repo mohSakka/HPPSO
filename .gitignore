@@ -15,8 +15,12 @@ build/
 .venv/
 venv/
 
-# Results and temp extraction
+# uv (lockfile IS committed)
+.uv-cache/
+
+# Result pickles and per-run experiment outputs
 results/
+experiments/results/
 _extracted/
 _extract_analysis.py
 _extract_code.py
@@ -29,6 +33,6 @@ _extract_code.py
 .DS_Store
 Thumbs.db
 
-# Large original notebooks stay in notebooks/original/ but outputs can be stripped
+# Pickles and zips are inputs to reproduction (kept out of git)
 *.pkl
 *.zip

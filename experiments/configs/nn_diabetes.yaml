@@ -1,0 +1,20 @@
+name: nn_diabetes
+experiment_type: nn_training
+description: >
+  Train a simple MLP on sklearn's diabetes dataset using a metaheuristic
+  optimizer for the weights. The PSO-family runners (PSO/PSO-m/PSO-RIW/HPPSO)
+  are the only algorithms wired into the NN training path.
+
+dataset: diabetes
+pop_size: 30
+max_iters: 200
+seed: 42
+
+algorithms:
+  - HPPSO
+  - PSO
+  - PSO-m
+  - PSO-RIW
+
+output:
+  save_json: true
