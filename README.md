@@ -37,13 +37,32 @@ uv run hppso-run-experiment classical_30d
 uv run python experiments/run.py experiments/configs/classical_30d.yaml
 ```
 
-Outputs land in `experiments/results/<name>/<timestamp>/`.
+Each run writes a timestamped folder under `experiments/results/<name>/`:
+
+```
+experiments/results/classical_30d/20260604_164332/
+├── config_used.yaml      # provenance snapshot
+├── metrics.json          # full per-algorithm, per-problem results
+├── results.csv           # long-form (classical / cec2011 only)
+└── plots/                # avg ranks, wins, per-function convergence
+```
+
+Add `--no-plots` to skip plot generation, or regenerate plots later
+without rerunning:
+
+```bash
+uv run hppso-run-experiment --plots-from experiments/results/classical_30d/<timestamp>
+```
+
+See [experiments/README.md](experiments/README.md) for the full config
+schema and the four shipped configs (`classical_30d`, `classical_1000d`,
+`cec2011`, `nn_diabetes`).
 
 ## Layout
 
 ```
 src/hppso/        # Library: algorithms, benchmarks, runners, nn, utils
-experiments/      # YAML-driven harness (configs/, run.py)
+experiments/      # YAML-driven harness (configs/, run.py, plots.py)
 reproduction/     # Paper-reproduction pipeline (reads pickles in results/)
 notebooks/        # Cleaned tutorial notebooks
 docs/             # Algorithm description + manuscript PDF
