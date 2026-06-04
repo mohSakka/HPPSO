@@ -5,6 +5,12 @@ Usage:
     uv run python experiments/run.py classical_30d              # shorthand
     uv run hppso-run-experiment experiments/configs/cec2011.yaml
 
+    # Skip plots on a fresh run:
+    uv run hppso-run-experiment classical_30d --no-plots
+
+    # Regenerate plots for an existing run without rerunning the experiment:
+    uv run hppso-run-experiment --plots-from experiments/results/classical_30d/20260604_164332
+
 Outputs land in experiments/results/<name>/<timestamp>/.
 """
 
@@ -104,7 +110,13 @@ DISPATCH = {
 }
 
 
-def write_outputs(results: dict, cfg: dict, out_dir: Path) -> None:
+def write_outputs(
+    results: dict,
+    cfg: dict,
+    out_dir: Path,
+    plots: bool = True,
+) -> list[Path]:
+    """Write metrics/CSV/config snapshot and (optionally) plots. Returns plot paths."""
     out_dir.mkdir(parents=True, exist_ok=True)
     output_opts = cfg.get("output", {}) or {}
 
@@ -137,6 +149,16 @@ def write_outputs(results: dict, cfg: dict, out_dir: Path) -> None:
                 )
         pd.DataFrame(rows).to_csv(out_dir / "results.csv", index=False)
 
+    plot_paths: list[Path] = []
+    if plots and output_opts.get("save_plots", True):
+        from experiments.plots import make_plots
+
+        try:
+            plot_paths = make_plots(results, cfg, out_dir)
+        except Exception as exc:  # plots are secondary — never fail the run
+            print(f"WARNING: plot generation failed: {exc}")
+    return plot_paths
+
 
 def resolve_config_path(arg: str) -> Path:
     p = Path(arg)
@@ -153,13 +175,44 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Run an HPPSO experiment from a YAML config."
     )
-    parser.add_argument("config", help="Path to YAML config file (or name under experiments/configs/)")
+    parser.add_argument(
+        "config",
+        nargs="?",
+        help="Path to YAML config file (or name under experiments/configs/). "
+        "Omit when using --plots-from.",
+    )
     parser.add_argument(
         "--output-dir",
         default=None,
         help="Override output dir (default: experiments/results/<name>/<timestamp>/)",
     )
+    parser.add_argument(
+        "--no-plots",
+        action="store_true",
+        help="Skip plot generation on a fresh run.",
+    )
+    parser.add_argument(
+        "--plots-from",
+        default=None,
+        help="Regenerate plots from a finished run dir (no rerun). "
+        "Reads <dir>/metrics.json + <dir>/config_used.yaml.",
+    )
     args = parser.parse_args(argv)
+
+    # Replot-only mode: skip the experiment, just rebuild plots.
+    if args.plots_from:
+        from experiments.plots import replot_from_run
+
+        run_dir = Path(args.plots_from)
+        if not run_dir.exists():
+            raise SystemExit(f"Run dir not found: {run_dir}")
+        print(f"Regenerating plots in {run_dir / 'plots'} from existing metrics.json")
+        plot_paths = replot_from_run(run_dir)
+        print(f"\nWrote {len(plot_paths)} plot(s).")
+        return 0
+
+    if not args.config:
+        parser.error("config is required unless --plots-from <dir> is given")
 
     cfg_path = resolve_config_path(args.config)
     cfg = load_config(cfg_path)
@@ -183,12 +236,15 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  name:    {name}")
     print(f"  type:    {etype}")
     print(f"  output:  {out_dir}")
+    print(f"  plots:   {'no' if args.no_plots else 'yes'}")
     print()
 
     results = DISPATCH[etype](cfg, out_dir)
-    write_outputs(results, cfg, out_dir)
+    plot_paths = write_outputs(results, cfg, out_dir, plots=not args.no_plots)
 
     print(f"\nDone. Results written to: {out_dir}")
+    if plot_paths:
+        print(f"Plots ({len(plot_paths)}): {out_dir / 'plots'}")
     return 0
 
 
