@@ -503,7 +503,8 @@ for dim in (30, 1000):
         _md("## 11. Export long-format merged CSV"),
         _code(
             """for dim, ds in datasets.items():
-    csv_path = REPO_ROOT / f"merged_results_{dim}D.csv"
+    csv_path = REPO_ROOT / "artifacts" / f"merged_results_{dim}D.csv"
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
     ds.to_long_dataframe().to_csv(csv_path, index=False)
     print(f"Saved {csv_path.name}")"""
         ),

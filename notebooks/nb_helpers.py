@@ -16,8 +16,9 @@ import pandas as pd
 NOTEBOOK_DIR = Path(__file__).resolve().parent
 REPO_ROOT = NOTEBOOK_DIR.parent
 RESULTS_DIR = REPO_ROOT / "results"
-REPRODUCED_TABLES = REPO_ROOT / "reproduced_tables"
-REPRODUCED_FIGURES = REPO_ROOT / "reproduced_figures"
+ARTIFACTS_DIR = REPO_ROOT / "artifacts"
+REPRODUCED_TABLES = ARTIFACTS_DIR / "reproduced_tables"
+REPRODUCED_FIGURES = ARTIFACTS_DIR / "reproduced_figures"
 
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))

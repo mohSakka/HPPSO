@@ -9,7 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 from reproduction.aggregate import average_ranks
-from reproduction.config import DIMENSIONS, OUTPUT_FIGURES_DIR, OUTPUT_TABLES_DIR, REPO_ROOT
+from reproduction.config import ARTIFACTS_DIR, DIMENSIONS, OUTPUT_FIGURES_DIR, OUTPUT_TABLES_DIR, REPO_ROOT
 from reproduction.export_shift_vectors import export_all_shift_vectors
 from reproduction.loaders import list_result_files
 from reproduction.merge import merge_dimension
@@ -28,8 +28,9 @@ def save_merged_dataset(dataset: MergedDataset) -> dict[str, Path]:
     dim = dataset.dimension
     paths: dict[str, Path] = {}
 
-    csv_path = REPO_ROOT / f"merged_results_{dim}D.csv"
-    pkl_path = REPO_ROOT / f"merged_results_{dim}D.pkl"
+    ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
+    csv_path = ARTIFACTS_DIR / f"merged_results_{dim}D.csv"
+    pkl_path = ARTIFACTS_DIR / f"merged_results_{dim}D.pkl"
 
     df = dataset.to_long_dataframe()
     df.to_csv(csv_path, index=False)
@@ -122,7 +123,7 @@ def main() -> int:
         print(f"  {dim}D:\n{ranks.to_string(index=False)}")
 
     print(f"\nOutputs:\n  Figures -> {OUTPUT_FIGURES_DIR}\n  Tables  -> {OUTPUT_TABLES_DIR}")
-    print(f"  Shift vectors -> {REPO_ROOT / 'shift_vectors_30D.csv'}, {REPO_ROOT / 'shift_vectors_1000D.csv'}")
+    print(f"  Shift vectors -> {ARTIFACTS_DIR / 'shift_vectors_30D.csv'}, {ARTIFACTS_DIR / 'shift_vectors_1000D.csv'}")
     return 0
 
 

@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from reproduction.config import FILE_PATTERNS, FUNCTION_NAMES, REPO_ROOT, RESULTS_DIR
+from reproduction.config import ARTIFACTS_DIR, FILE_PATTERNS, FUNCTION_NAMES, REPO_ROOT, RESULTS_DIR
 from reproduction.loaders import load_shift_vectors
 
 
@@ -50,7 +50,7 @@ def shift_vectors_to_dataframe(shift_vectors: dict[str, list[list[float]]]) -> p
 
 def export_shift_vectors(dimension: int, output_dir: Path | None = None) -> Path:
     """Load shift vectors for one dimension and write CSV (20 rows, one per function)."""
-    output_dir = output_dir or REPO_ROOT
+    output_dir = output_dir or ARTIFACTS_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
 
     shift_vectors = load_shift_vectors(dimension)
@@ -70,7 +70,7 @@ def export_shift_vectors(dimension: int, output_dir: Path | None = None) -> Path
 
 def export_all_shift_vectors(output_dir: Path | None = None) -> dict[int, dict[str, Path | str | int]]:
     """Export 30D and 1000D shift vectors; return metadata for reporting."""
-    output_dir = output_dir or REPO_ROOT
+    output_dir = output_dir or ARTIFACTS_DIR
     manifest: dict[int, dict[str, Path | str | int]] = {}
 
     for dim in (30, 1000):

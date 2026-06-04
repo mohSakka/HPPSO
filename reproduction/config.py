@@ -7,8 +7,9 @@ from pathlib import Path
 # Repository root (HPPSO package directory).
 REPO_ROOT = Path(__file__).resolve().parents[1]
 RESULTS_DIR = REPO_ROOT / "results"
-OUTPUT_FIGURES_DIR = REPO_ROOT / "reproduced_figures"
-OUTPUT_TABLES_DIR = REPO_ROOT / "reproduced_tables"
+ARTIFACTS_DIR = REPO_ROOT / "artifacts"
+OUTPUT_FIGURES_DIR = ARTIFACTS_DIR / "reproduced_figures"
+OUTPUT_TABLES_DIR = ARTIFACTS_DIR / "reproduced_tables"
 
 # Known result file patterns (filenames vary slightly; loaders resolve by keyword).
 FILE_PATTERNS = {
