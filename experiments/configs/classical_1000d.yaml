@@ -1,8 +1,8 @@
 name: classical_1000d
 experiment_type: classical
 description: >
-  1000D shifted classical benchmark. Matches paper Tables 3/5/7
-  and Figure 8. Long-running; CMA-ES is expensive at 1000D.
+  Revised suite: 20 classical plus ten additional non-separable, rotated,
+  and composition functions. This suite differs from historical paper tables.
 
 dim: 1000
 runs: 20

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neural-network benchmark progress</title>
+<style>
+  :root { color-scheme: light; --ink: #122634; --muted: #486071; --line: #d5e0e7; --accent: #006f68; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f2f6f8; color: var(--ink); font: 16px system-ui, sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: 32px 16px; }
+  h1 { margin: 0; font-size: clamp(1.65rem, 5vw, 2.45rem); }
+  h2 { margin: 0 0 12px; font-size: 1.2rem; }
+  p { margin: 8px 0; }
+  .muted { color: var(--muted); }
+  section { margin: 18px 0; background: white; border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  progress { width: 100%; height: 15px; accent-color: var(--accent); }
+  #status { font-weight: 700; font-size: 1.25rem; }
+  .controls { display: flex; align-items: end; gap: 12px 22px; flex-wrap: wrap; }
+  .control { display: grid; gap: 4px; }
+  select { max-width: 100%; padding: 6px 9px; border: 1px solid #98aebd; border-radius: 5px; color: var(--ink); background: white; font: inherit; }
+  label { font-size: .9rem; font-weight: 600; }
+  .follow { padding-bottom: 7px; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  svg[hidden] { display: none; }
+  svg text { fill: var(--muted); font: 13px system-ui, sans-serif; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 15px; color: var(--muted); font-size: .84rem; }
+  .legend i { display: inline-block; width: 18px; height: 3px; margin: 0 5px 3px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: .94rem; }
+  th, td { padding: 8px; border-bottom: 1px solid var(--line); text-align: left; }
+  th { color: var(--muted); font-size: .85rem; }
+  td button { color: var(--accent); background: none; border: 0; padding: 0; text-align: left; font: inherit; cursor: pointer; }
+  td button:hover { text-decoration: underline; }
+  .scroll { overflow: auto; }
+</style>
+<main>
+  <header>
+    <h1>Neural-network benchmark</h1>
+    <p class="muted">20 datasets · 11 algorithms · 10 seeds · 3,000 evaluations per trial · population 30</p>
+  </header>
+  <section aria-label="Overall progress">
+    <p id="status" aria-live="polite">Reading saved trials…</p>
+    <progress id="bar" max="2200" value="0" aria-label="Completed benchmark trials"></progress>
+    <p class="muted" id="latest">Waiting for the first completed trial.</p>
+    <p class="muted" id="connection"></p>
+  </section>
+  <section>
+    <h2>Convergence curves</h2>
+    <div class="controls">
+      <label class="control">Dataset<select id="dataset"></select></label>
+      <label class="control">Algorithm<select id="algorithm"></select></label>
+      <label class="follow"><input type="checkbox" id="follow" checked> Follow latest trial</label>
+    </div>
+    <p id="curveStatus" class="muted">Waiting for saved convergence data.</p>
+    <svg id="chart" viewBox="0 0 850 360" role="img" aria-label="Best training loss versus objective evaluations" hidden></svg>
+    <div id="legend" class="legend"></div>
+  </section>
+  <section>
+    <h2>Progress by dataset</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Dataset</th><th>Task</th><th>Rows</th><th>Completed</th><th>Status</th></tr></thead>
+      <tbody id="datasets"></tbody>
+    </table></div>
+  </section>
+</main>
+<script>
+const el = id => document.getElementById(id);
+const colors = ['#006f68','#bc4e23','#3159b8','#8852ad','#a27100','#aa355e','#31596c','#578037','#5160a2','#827142'];
+let progress, request = 0, chartKey = '';
+
+async function get(path) {
+  const response = await fetch(path, {cache: 'no-store'});
+  if (!response.ok) throw new Error('Progress unavailable');
+  return response.json();
+}
+
+function svg(parent, tag, attributes, label) {
+  const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [name, value] of Object.entries(attributes)) node.setAttribute(name, value);
+  if (label !== undefined) node.textContent = label;
+  parent.append(node);
+  return node;
+}
+
+function draw(curves, budget) {
+  const chart = el('chart');
+  chart.replaceChildren();
+  el('legend').replaceChildren();
+  chart.toggleAttribute('hidden', !curves.length);
+  if (!curves.length) {
+    el('curveStatus').textContent = 'No completed seeds for this selection yet.';
+    return;
+  }
+  el('curveStatus').textContent = curves.length + ' of 10 seeds complete. Each line shows best training loss so far.';
+  const losses = curves.flatMap(run => run.convergence.map(point => point[1]));
+  const low = Math.min(...losses), high = Math.max(...losses);
+  const padding = high > low ? (high - low) * 0.07 : Math.max(Math.abs(low) * 0.05, 1e-8);
+  const min = low - padding, max = high + padding;
+  const x = n => 92 + 732 * n / budget;
+  const y = loss => 302 - 276 * (loss - min) / (max - min);
+  for (let i = 0; i <= 5; i++) {
+    const loss = min + (max - min) * i / 5;
+    const py = y(loss);
+    svg(chart, 'line', {x1: 92, x2: 824, y1: py, y2: py, stroke: '#dbe5ea'});
+    svg(chart, 'text', {x: 84, y: py + 4, 'text-anchor': 'end'}, Number(loss.toPrecision(4)));
+  }
+  for (let i = 0; i <= 6; i++) {
+    const n = budget * i / 6;
+    const px = x(n);
+    svg(chart, 'line', {x1: px, x2: px, y1: 26, y2: 302, stroke: '#e6edf1'});
+    svg(chart, 'text', {x: px, y: 322, 'text-anchor': 'middle'}, n.toLocaleString());
+  }
+  svg(chart, 'text', {x: 458, y: 348, 'text-anchor': 'middle'}, 'Objective evaluations');
+  svg(chart, 'text', {x: -164, y: 18, transform: 'rotate(-90)', 'text-anchor': 'middle'}, 'Best training loss');
+  for (const run of curves.sort((a, b) => a.seed - b.seed)) {
+    const color = colors[run.seed % colors.length];
+    const [first, ...rest] = run.convergence;
+    const d = 'M ' + x(first[0]) + ' ' + y(first[1]) + rest.map(([n, loss]) => ' H ' + x(n) + ' V ' + y(loss)).join('');
+    const path = svg(chart, 'path', {d, fill: 'none', stroke: color, 'stroke-width': 1.65, opacity: .87});
+    svg(path, 'title', {}, 'Seed ' + run.seed + ' · final loss ' + run.training_loss.toPrecision(5));
+    const label = document.createElement('span');
+    const swatch = document.createElement('i');
+    swatch.style.backgroundColor = color;
+    label.append(swatch, 'Seed ' + run.seed);
+    el('legend').append(label);
+  }
+}
+
+async function refreshCurves() {
+  if (!progress) return;
+  const dataset = el('dataset').value, algorithm = el('algorithm').value;
+  const count = progress.datasets.find(item => item.key === dataset)?.completed;
+  const key = [dataset, algorithm, count].join('|');
+  if (key === chartKey) return;
+  const id = ++request;
+  const params = new URLSearchParams({dataset, algorithm});
+  const curves = await get('/api/curves?' + params);
+  if (id === request) {
+    draw(curves, progress.budget);
+    chartKey = key;
+  }
+}
+
+function fillSelect(select, values) {
+  for (const [key, label] of values) select.add(new Option(label, key));
+}
+
+async function refresh() {
+  try {
+    progress = await get('/api/progress');
+    if (!el('dataset').options.length) {
+      fillSelect(el('dataset'), progress.datasets.map(item => [item.key, item.label]));
+      fillSelect(el('algorithm'), progress.algorithms.map(name => [name, name]));
+    }
+    const complete = progress.datasets.filter(item => item.status === 'Complete').length;
+    el('status').textContent = progress.completed.toLocaleString() + ' / ' + progress.total.toLocaleString() +
+      ' trials complete · ' + complete + ' / ' + progress.datasets.length + ' datasets complete';
+    el('bar').max = progress.total;
+    el('bar').value = progress.completed;
+    if (progress.latest) {
+      const latest = progress.latest;
+      const label = progress.datasets.find(item => item.key === latest.dataset).label;
+      el('latest').textContent = 'Latest saved trial: ' + label + ' · ' + latest.algorithm + ' · seed ' +
+        latest.seed + ' · ' + latest.seconds.toFixed(1) + ' s';
+      if (el('follow').checked) {
+        el('dataset').value = latest.dataset;
+        el('algorithm').value = latest.algorithm;
+      }
+    }
+    el('datasets').replaceChildren(...progress.datasets.map(item => {
+      const row = document.createElement('tr');
+      const button = document.createElement('button');
+      button.textContent = item.label;
+      button.onclick = () => {
+        el('follow').checked = false;
+        el('dataset').value = item.key;
+        refreshCurves().catch(showError);
+      };
+      row.insertCell().append(button);
+      for (const value of [item.task, item.samples.toLocaleString(), item.completed + ' / ' + item.total, item.status]) {
+        row.insertCell().textContent = value;
+      }
+      return row;
+    }));
+    await refreshCurves();
+    el('connection').textContent = 'Updated ' + new Date().toLocaleTimeString() + ' · refreshes every 5 seconds';
+  } catch (_) {
+    showError();
+  }
+}
+
+function showError() {
+  el('connection').textContent = 'Could not refresh saved trials. Retrying…';
+}
+
+for (const name of ['dataset', 'algorithm']) {
+  el(name).onchange = () => {
+    el('follow').checked = false;
+    refreshCurves().catch(showError);
+  };
+}
+el('follow').onchange = refresh;
+refresh();
+setInterval(refresh, 5000);
+</script>
+</html>

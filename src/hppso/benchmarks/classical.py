@@ -63,15 +63,26 @@ class BenchmarkFunctions:
         fixed_shift_vector=None,
     ):
         self.dim = dim
-        self.lower_bound = np.atleast_1d(lower_bound)
-        self.upper_bound = np.atleast_1d(upper_bound)
+        self.base_lower_bound = np.broadcast_to(np.asarray(lower_bound, dtype=float), (dim,)).copy()
+        self.base_upper_bound = np.broadcast_to(np.asarray(upper_bound, dtype=float), (dim,)).copy()
+        if (not np.all(np.isfinite(self.base_lower_bound))
+                or not np.all(np.isfinite(self.base_upper_bound))
+                or np.any(self.base_lower_bound >= self.base_upper_bound)):
+            raise ValueError("Benchmark bounds must be finite with lower < upper")
 
-        if random_shift:
-            self.o = np.random.uniform(self.lower_bound, self.upper_bound, dim)
-        elif fixed_shift_vector is not None:
-            self.o = np.asarray(fixed_shift_vector, dtype=float)
+        if fixed_shift_vector is not None:
+            self.o = np.asarray(fixed_shift_vector, dtype=float).copy()
+        elif random_shift:
+            self.o = np.random.uniform(self.base_lower_bound, self.base_upper_bound, dim)
         else:
             self.o = np.zeros(dim)
+        if self.o.shape != (dim,) or not np.all(np.isfinite(self.o)):
+            raise ValueError("Shift vector must have one finite value per dimension")
+
+        # Translating the box as well as the objective preserves the original
+        # feasible domain in z = x - o, including nonzero base minimizers.
+        self.lower_bound = self.base_lower_bound + self.o
+        self.upper_bound = self.base_upper_bound + self.o
 
     def _prepare(self, x):
         return np.asarray(x, dtype=float) - self.o
@@ -81,10 +92,17 @@ class BenchmarkFunctions:
         return float(np.sum(np.clip(z**2, 0, 1e300)))
 
     def f2_schwefel_2_22(self, x):
-        z = self._prepare(x)
-        abs_z = np.abs(z)
-        log_prod = np.sum(np.log(abs_z + 1e-100))
-        return float(np.sum(abs_z) + np.exp(np.clip(log_prod, -700, 700)))
+        """Return log(1 + sum(abs(z)) + prod(abs(z))) without overflow.
+
+        This is an order-preserving objective transformation, not raw Schwefel
+        units. Zero factors are exact; no epsilon or exponent clipping is used.
+        """
+        abs_z = np.abs(self._prepare(x))
+        with np.errstate(divide="ignore"):
+            logs = np.log(abs_z)
+        log_sum = np.logaddexp.reduce(logs)
+        log_product = -np.inf if np.any(abs_z == 0) else np.sum(logs)
+        return float(np.logaddexp(np.logaddexp(0.0, log_sum), log_product))
 
     def f3_zakharov(self, x):
         z = self._prepare(x)
@@ -220,12 +238,18 @@ def build_problem_suite(
     dim: int = 30,
     random_shift: bool = False,
     fixed_shifts: dict[str, np.ndarray] | None = None,
+    michalewicz_dimension: int | None = 10,
 ):
-    """Build the list of 20 benchmark problems for a given dimension."""
+    """Build translated objectives AND domains for all 20 benchmarks.
+
+    Each problem uses F(x)=f(x-o), x in [L+o, U+o]. Explicit fixed shifts
+    take precedence over random generation. Both random_shift modes generate
+    one vector per problem, shared by every algorithm and run.
+    """
     problems = []
     for name in FUNCTION_NAMES:
         lb, ub = DEFAULT_BOUNDS[name]
-        func_dim = 10 if name == "f13_michalewicz" else dim
+        func_dim = michalewicz_dimension if name == "f13_michalewicz" and michalewicz_dimension is not None else dim
         lb_arr = np.full(func_dim, lb)
         ub_arr = np.full(func_dim, ub)
 
@@ -247,8 +271,27 @@ def build_problem_suite(
                 "name": name,
                 "function": getattr(bench, name),
                 "dimension": func_dim,
-                "bounds": (lb, ub),
+                "bounds": (bench.lower_bound.copy(), bench.upper_bound.copy()),
+                "base_bounds": (lb_arr.tolist(), ub_arr.tolist()),
+                "shift_convention": "F(x)=f(x-o); x in [L+o,U+o]",
                 "shift_vector": bench.o.tolist(),
+                "objective_scale": "log1p" if name == "f2_schwefel_2_22" else "raw",
             }
         )
     return problems
+
+
+def problem_definitions(problems):
+    """JSON-ready definitions, without callables, for exact run reconstruction."""
+    return {
+        p["name"]: {
+            "dimension": p["dimension"],
+            "shift_vector": p["shift_vector"],
+            "base_bounds": [np.asarray(b).tolist() for b in p["base_bounds"]],
+            "bounds": [np.asarray(b).tolist() for b in p["bounds"]],
+            "shift_convention": p["shift_convention"],
+            "objective_scale": p["objective_scale"],
+            **p.get("definition", {}),
+        }
+        for p in problems
+    }

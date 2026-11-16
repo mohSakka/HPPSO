@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import random
+from itertools import count
 
 import numpy as np
 
@@ -31,11 +32,11 @@ def run_ga_mpc(
     def tournament_selection(pop, fitness_vals, k):
         selected = random.sample(range(len(pop)), k)
         best = min(selected, key=lambda i: fitness_vals[i])
-        return pop[best]
+        return best
 
-    def mpc_crossover(x1, x2, x3):
-        parents = sorted([x1, x2, x3], key=obj_func)
-        x1, x2, x3 = parents
+    def mpc_crossover(indices, pop, fitness):
+        ranked = sorted(indices, key=lambda i: fitness[i])
+        x1, x2, x3 = pop[ranked]
         beta = np.random.normal(mu, sigma)
         return [
             x1 + beta * (x2 - x3),
@@ -68,11 +69,31 @@ def run_ga_mpc(
     population = np.random.uniform(lb, ub, (ps, dim))
     history = []
     global_best = float("inf")
+    best_solution = None
 
-    for _ in range(max_gen):
-        fitness_vals = np.array([obj_func(ind) for ind in population])
+    cache = {}
+
+    def evaluate(points):
+        nonlocal global_best, best_solution
+        values = np.empty(len(points))
+        for i, point in enumerate(points):
+            key = np.ascontiguousarray(point).tobytes()
+            if key not in cache:
+                cache[key] = obj_func(point)
+            values[i] = cache[key]
+            if values[i] < global_best:
+                global_best = float(values[i])
+                best_solution = point.copy()
+        return values
+
+    fitness_vals = evaluate(population)
+
+    for _ in (count() if max_gen is None else range(max_gen)):
+        cache = {np.ascontiguousarray(x).tobytes(): value for x, value in zip(population, fitness_vals)}
         m = int(archive_ratio * ps)
-        archive = population[np.argsort(fitness_vals)[:m]]
+        archive_indices = np.argsort(fitness_vals)[:m]
+        archive = population[archive_indices]
+        archive_fitness = fitness_vals[archive_indices]
 
         selection_pool = np.array(
             [tournament_selection(population, fitness_vals, random.choice(tc_options)) for _ in range(ps)]
@@ -81,32 +102,33 @@ def run_ga_mpc(
         offspring = []
         for i in range(0, ps - 2, 3):
             if random.random() < cr:
-                x1, x2, x3 = selection_pool[i], selection_pool[i + 1], selection_pool[i + 2]
-                offspring.extend(mpc_crossover(x1, x2, x3))
+                offspring.extend(mpc_crossover(selection_pool[i:i + 3], population, fitness_vals))
 
         if offspring:
             offspring = np.clip(randomized_operator(np.array(offspring), archive), lb, ub)
             combined = np.vstack((offspring, archive))
+            combined_fitness = np.r_[evaluate(offspring), archive_fitness]
         else:
             combined = archive
+            combined_fitness = archive_fitness
 
-        combined_fitness = np.array([obj_func(ind) for ind in combined])
         best_idx = np.argsort(combined_fitness)[:ps]
         population = combined[best_idx]
+        fitness_vals = combined_fitness[best_idx].copy()
         if len(population) < ps:
             n_add = ps - len(population)
-            population = np.vstack((population, np.random.uniform(lb, ub, (n_add, dim))))
+            additions = np.random.uniform(lb, ub, (n_add, dim))
+            population = np.vstack((population, additions))
+            fitness_vals = np.r_[fitness_vals, evaluate(additions)]
 
+        previous = population.copy()
         population = np.clip(population, lb, ub)
         population = perturb_duplicates(population)
-
-        best_val = float(np.min([obj_func(ind) for ind in population]))
-        global_best = min(global_best, best_val)
+        changed = np.any(population != previous, axis=1)
+        fitness_vals[changed] = evaluate(population[changed])
         history.append(global_best)
 
-    final_idx = int(np.argmin([obj_func(ind) for ind in population]))
-    best_solution = population[final_idx]
-    return best_solution, obj_func(best_solution), history
+    return best_solution, global_best, history
 
 
 run_ga_mpc_cec = run_ga_mpc

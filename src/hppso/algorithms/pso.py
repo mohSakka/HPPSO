@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import numpy as np
 
+from ._pso_bounds import reflect_bounds, velocity_limit
+
 
 class PSO:
     """Particle Swarm Optimization with optional Gaussian mutation and random inertia."""
@@ -15,11 +17,12 @@ class PSO:
         num_particles: int,
         max_iterations: int,
         w: float = 0.65,
-        c1: float = 1.5,
-        c2: float = 1.5,
+        c1: float = 2.0,
+        c2: float = 2.0,
         mutation_rate: float = 0.01,
         gaussian_mutation_strength: float = 0.01,
         w_random_range: tuple[float, float] | None = None,
+        v_max: float | np.ndarray | None = None,
     ):
         self.objective_function = objective_function
         self.bounds = bounds
@@ -36,11 +39,13 @@ class PSO:
         bounds_array = np.array(bounds)
         self.lower_bounds = bounds_array[:, 0]
         self.upper_bounds = bounds_array[:, 1]
+        self.v_limit = velocity_limit(self.lower_bounds, self.upper_bounds, v_max)
 
         self.positions = np.random.uniform(
             self.lower_bounds, self.upper_bounds, size=(self.num_particles, self.dimension)
         )
-        self.velocities = np.random.uniform(-1, 1, size=(self.num_particles, self.dimension))
+        self.velocities = np.zeros_like(self.positions)
+        self.velocities = np.clip(self.velocities, -self.v_limit, self.v_limit)
 
         self.personal_best_positions = np.copy(self.positions)
         self.personal_best_scores = np.array([self.objective_function(p) for p in self.positions])
@@ -61,6 +66,7 @@ class PSO:
             cognitive = self.c1 * r1 * (self.personal_best_positions - self.positions)
             social = self.c2 * r2 * (self.global_best_position - self.positions)
             self.velocities = self.w * self.velocities + cognitive + social
+            self.velocities = np.clip(self.velocities, -self.v_limit, self.v_limit)
             self.positions = self.positions + self.velocities
 
             if self.mutation_rate > 0:
@@ -70,11 +76,8 @@ class PSO:
                     std_devs = ranges * self.gaussian_mutation_strength
                     noise = np.random.normal(0, std_devs, size=(np.sum(mutation_mask), self.dimension))
                     self.positions[mutation_mask] = self.positions[mutation_mask] + noise
-                    self.positions[mutation_mask] = np.clip(
-                        self.positions[mutation_mask], self.lower_bounds, self.upper_bounds
-                    )
 
-            self.positions = np.clip(self.positions, self.lower_bounds, self.upper_bounds)
+            reflect_bounds(self.positions, self.velocities, self.lower_bounds, self.upper_bounds)
             current_scores = np.array([self.objective_function(p) for p in self.positions])
 
             improved = current_scores < self.personal_best_scores

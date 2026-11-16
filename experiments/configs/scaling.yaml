@@ -1,0 +1,16 @@
+name: scaling
+experiment_type: scaling
+description: Representative dimensional scaling pilot, not a full benchmark.
+dimensions: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+budget_modes: [proportional, fixed]
+evaluations_per_dimension: 10
+fixed_evaluations: 1000
+runs: 3
+pop_size: 30
+seed: 42
+functions: [f21_expanded_schaffer_f6, f22_rotated_ellipsoid, f23_rotated_rastrigin, f24_rotated_ackley, f25_composition, f26_rotated_griewank, f27_rotated_discus, f28_schwefel_1_2, f29_rotated_schaffer_f7, f30_composition_multimodal]
+algorithms: [HPPSO, Original PSO, SHADE, Sep-CMA-ES]
+output:
+  save_json: true
+  save_csv: true
+  save_plots: true

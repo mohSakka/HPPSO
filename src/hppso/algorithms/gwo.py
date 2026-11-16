@@ -52,7 +52,9 @@ class GWO:
                 self.delta_score = float(new_delta_score)
                 self.delta_pos = new_delta_pos
 
-            a = 2 - iteration * (2 / self.max_iterations)
+            progress = getattr(self.objective_function, "evaluation_progress", None)
+            fraction = progress() if progress is not None else iteration / self.max_iterations
+            a = 2 - 2*fraction
             r1 = np.random.rand(self.num_wolves, self.dimension)
             r2 = np.random.rand(self.num_wolves, self.dimension)
 

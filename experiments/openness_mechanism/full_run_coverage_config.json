@@ -1,0 +1,8 @@
+{
+  "projection_seed": 67024,
+  "projections": 12,
+  "projection_dimension": 3,
+  "cell_widths": [0.025, 0.05, 0.1],
+  "reference_cell_width": 0.05,
+  "checkpoint_every": 25
+}

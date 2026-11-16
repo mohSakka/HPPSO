@@ -1,4 +1,4 @@
-"""Benchmark HPPSO and competitors on 20 shifted classical functions."""
+"""Benchmark HPPSO and competitors on 20 classical and ten additional hard functions."""
 
 from __future__ import annotations
 
@@ -9,12 +9,13 @@ import os
 import numpy as np
 import pandas as pd
 
-from hppso.benchmarks.classical import FUNCTION_NAMES, build_problem_suite
+from hppso.benchmarks.classical import problem_definitions
+from hppso.benchmarks.suite import build_benchmark_suite
 from hppso.experiments.runners import DEFAULT_ALGORITHMS, run_benchmark
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Benchmark on 20 shifted classical functions")
+    parser = argparse.ArgumentParser(description="Benchmark on 20 classical and ten additional hard functions")
     parser.add_argument("--dim", type=int, default=30)
     parser.add_argument("--runs", type=int, default=20)
     parser.add_argument("--pop-size", type=int, default=30)
@@ -24,7 +25,10 @@ def main():
 
     os.makedirs(args.output_dir, exist_ok=True)
     np.random.seed(42)
-    problems = build_problem_suite(dim=args.dim, random_shift=False)
+    problems = build_benchmark_suite(dim=args.dim, random_shift=False)
+
+    with open(os.path.join(args.output_dir, "problem_definitions.json"), "w", encoding="utf-8") as f:
+        json.dump(problem_definitions(problems), f, indent=2)
 
     results = run_benchmark(
         DEFAULT_ALGORITHMS,
@@ -57,7 +61,7 @@ def main():
         json.dump(shifts, f, indent=2)
 
     print(f"\nResults saved to {args.output_dir}")
-    print(f"Functions tested: {len(FUNCTION_NAMES)}")
+    print(f"Functions tested: {len(problems)}")
 
 
 if __name__ == "__main__":

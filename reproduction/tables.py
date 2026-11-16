@@ -118,8 +118,7 @@ def save_tables(dataset: MergedDataset, *, output_dir: Path | None = None) -> di
     ranks.to_csv(rank_path, index=False)
     paths["average_ranks"] = rank_path
 
-    exclude = {"f2_schwefel_2_22"} if dim == 1000 else set()
-    wilcoxon = wilcoxon_pairwise_scores(dataset, exclude_functions=exclude)
+    wilcoxon = wilcoxon_pairwise_scores(dataset)
     table_num_w = 6 if dim == 30 else 7
     w_path = output_dir / f"table_{table_num_w:02d}_wilcoxon_{dim}d.csv"
     wilcoxon.to_csv(w_path, index=False)

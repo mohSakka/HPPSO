@@ -1,0 +1,68 @@
+{
+  "dimension": 100,
+  "population": 50,
+  "budget": 1000,
+  "seeds": [
+    0
+  ],
+  "functions": [
+    "f1_sphere",
+    "f23_rotated_rastrigin",
+    "f25_composition",
+    "f14_alpine_1",
+    "f10_levy",
+    "f4_rosenbrock",
+    "f8_griewank",
+    "f3_zakharov",
+    "f22_rotated_ellipsoid",
+    "f27_rotated_discus",
+    "f29_rotated_schaffer_f7",
+    "f30_composition_multimodal",
+    "f31_composition_ridges"
+  ],
+  "instance_seed": 42,
+  "w": 0.65,
+  "c1": 2.0,
+  "c2": 2.0,
+  "trace_points": 40,
+  "bootstrap_resamples": 200,
+  "bootstrap_seed": 2026,
+  "eta": 0.001,
+  "alpha_mut": 0.05,
+  "theta": 0.5,
+  "lam": 0.4,
+  "stagnation_threshold": 10,
+  "shared_level": 0.5,
+  "shared_openness": "probability",
+  "grid_mode": "one_at_a_time",
+  "pso_m_rate": 0.05,
+  "pso_m_strength": 0.1,
+  "etas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1
+  ],
+  "alphas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "thetas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "lambdas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "velocity_initialization": "zeros"
+}

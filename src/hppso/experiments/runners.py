@@ -101,7 +101,7 @@ def run_csa(obj_func, dim, lower_bound, upper_bound, pop_size, max_iters, seed):
     return score, history
 
 
-def run_cmaes(obj_func, dim, lower_bound, upper_bound, pop_size, max_iters, max_evals, seed):
+def run_cmaes(obj_func, dim, lower_bound, upper_bound, pop_size, max_iters, max_evals, seed, *, stopfitness=None):
     random.seed(seed)
     np.random.seed(seed)
     lb = np.atleast_1d(lower_bound)
@@ -122,11 +122,13 @@ def run_cmaes(obj_func, dim, lower_bound, upper_bound, pop_size, max_iters, max_
         pop_size=pop_size,
         max_total_evaluations=max_evals,
     )
+    if stopfitness is not None:
+        cmaes.stopfitness = stopfitness
     _, score, history = cmaes.optimize()
     return score, history
 
 
-def run_sep_cmaes(obj_func, dim, lower_bound, upper_bound, pop_size, max_iters, max_evals, seed):
+def run_sep_cmaes(obj_func, dim, lower_bound, upper_bound, pop_size, max_iters, max_evals, seed, *, stopfitness=None):
     random.seed(seed)
     np.random.seed(seed)
     lb = np.atleast_1d(lower_bound)
@@ -147,6 +149,8 @@ def run_sep_cmaes(obj_func, dim, lower_bound, upper_bound, pop_size, max_iters, 
         pop_size=pop_size,
         max_total_evaluations=max_evals,
     )
+    if stopfitness is not None:
+        sep.stopfitness = stopfitness
     _, score, history = sep.optimize()
     return score, history
 

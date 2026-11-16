@@ -30,13 +30,15 @@ class CSA:
         history = []
 
         for iteration in range(1, self.max_iterations + 1):
-            a = np.pi - np.pi * (iteration / self.max_iterations) ** 2
-            p = 1 - 0.9 * (iteration / self.max_iterations) ** 0.5
+            progress = getattr(self.objective_function, "evaluation_progress", None)
+            fraction = progress() if progress is not None else iteration / self.max_iterations
+            a = np.pi - np.pi * fraction ** 2
+            p = 1 - 0.9 * fraction ** 0.5
             w = a * np.random.rand() - a
             rand_tan = np.random.rand(self.num_individuals, self.dimension)
             diff = self.global_best_position - self.positions
 
-            if iteration > (self.c * self.max_iterations):
+            if fraction > self.c:
                 self.positions = self.global_best_position + diff * np.tan(w * rand_tan)
             else:
                 self.positions = self.global_best_position - diff * np.tan(w * p)

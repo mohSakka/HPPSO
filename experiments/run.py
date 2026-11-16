@@ -46,11 +46,16 @@ def select_algorithms(names: list[str], registry: dict) -> dict:
 
 
 def run_classical(cfg: dict, out_dir: Path) -> dict:
-    from hppso.benchmarks.classical import build_problem_suite
+    from hppso.benchmarks.classical import problem_definitions
+    from hppso.benchmarks.suite import build_benchmark_suite
     from hppso.experiments.runners import DEFAULT_ALGORITHMS, run_benchmark
 
     np.random.seed(cfg.get("seed", 42))
-    problems = build_problem_suite(dim=cfg["dim"], random_shift=False)
+    problems = build_benchmark_suite(dim=cfg["dim"], random_shift=False, additional_seed=cfg.get("seed",42))
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "problem_definitions.json").write_text(
+        json.dumps(problem_definitions(problems), indent=2), encoding="utf-8"
+    )
     algos = select_algorithms(cfg["algorithms"], DEFAULT_ALGORITHMS)
     return run_benchmark(
         algos,
@@ -103,7 +108,11 @@ def run_nn_training(cfg: dict, out_dir: Path) -> dict:
     return out
 
 
+from experiments.scaling import run_scaling
+
+
 DISPATCH = {
+    "scaling": run_scaling,
     "classical": run_classical,
     "cec2011": run_cec2011,
     "nn_training": run_nn_training,

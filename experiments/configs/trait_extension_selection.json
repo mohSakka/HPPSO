@@ -1,0 +1,43 @@
+{
+  "selection_seed": 20261107,
+  "shifted_pool": [
+    "f3_zakharov",
+    "f4_rosenbrock",
+    "f6_rastrigin",
+    "f7_ackley",
+    "f8_griewank",
+    "f10_levy",
+    "f14_alpine_1",
+    "f17_bent_cigar",
+    "f18_discus",
+    "f19_penalized_1"
+  ],
+  "rotated_pool": [
+    "f22_rotated_ellipsoid",
+    "f24_rotated_ackley",
+    "f26_rotated_griewank",
+    "f27_rotated_discus",
+    "f29_rotated_schaffer_f7"
+  ],
+  "shifted": [
+    "f14_alpine_1",
+    "f10_levy",
+    "f4_rosenbrock",
+    "f8_griewank",
+    "f3_zakharov"
+  ],
+  "rotated": [
+    "f22_rotated_ellipsoid",
+    "f27_rotated_discus",
+    "f29_rotated_schaffer_f7"
+  ],
+  "composition": [
+    "f30_composition_multimodal",
+    "f31_composition_ridges"
+  ],
+  "original_functions": [
+    "f1_sphere",
+    "f23_rotated_rastrigin",
+    "f25_composition"
+  ]
+}

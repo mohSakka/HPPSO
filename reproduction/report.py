@@ -231,7 +231,7 @@ def save_report(
         "- `all_convergence_histories.pkl` duplicates 1000D data; `all_convergence_histories1000.pkl` is preferred.",
         "- 30D CMA-ES results are taken from the dedicated cmaes-only convergence file.",
         "- Shift vectors are fixed per function at each dimension (see Shift Vectors section).",
-        "- 1000D Wilcoxon table excludes `f2_schwefel_2_22` (all algorithms return overflow/inf), matching the original notebook.",
+        "- Average ranks and Wilcoxon comparisons exclude entire functions with missing or non-finite runs for any algorithm. See analysis_included and n_invalid in the performance CSV. Historical overflow results cannot be recovered by transforming stored infinity values; rerun Schwefel 2.22 on the documented log1p scale.",
         "- Figures 7–8 plot **HPPSO only** (median over 20 runs), not all-algorithm overlays.",
         "",
     ]

@@ -13,6 +13,10 @@ def get_cec2011_info(func_num: int):
     target_dim = suite.dimension
     meta = cec.CEC2011_METADATA[func_num]
     lb, ub = meta[1], meta[2]
+    # Original CEC2011 technical report, pp. 7 and 33: 0.6 <= u <= 0.9.
+    # MinionPy 1.9.1 incorrectly supplies a negative lower bound for T3.
+    if func_num == 3:
+        lb, ub = np.array([0.6]), np.array([0.9])
 
     def wrapper(x):
         x_arr = np.asarray(x, dtype=float).reshape(1, -1)

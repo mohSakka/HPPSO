@@ -1,0 +1,16 @@
+{
+  "reference": "experiments/results/ablation_fresh/08_full_factorial",
+  "reference_settings_only": true,
+  "functions": ["f10_levy", "f29_rotated_schaffer_f7", "f7_ackley", "f26_rotated_griewank"],
+  "dimension": 1000,
+  "population": 50,
+  "budget": 60000,
+  "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "global_stagnation_updates": 10,
+  "horizon": 10,
+  "max_snapshots": 5,
+  "recovery_threshold": 0.001,
+  "diagnostic_seed": 67021,
+  "bootstrap_seed": 67022,
+  "bootstrap_resamples": 10000
+}

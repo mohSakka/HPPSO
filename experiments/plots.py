@@ -46,6 +46,8 @@ def make_plots(results: dict, cfg: dict, out_dir: Path) -> list[Path]:
     etype = cfg.get("experiment_type")
     if etype in ("classical", "cec2011"):
         return _plot_benchmark(results, cfg, plots_dir)
+    if etype == "scaling":
+        return _plot_scaling(results, cfg, plots_dir)
     if etype == "nn_training":
         return _plot_nn(results, cfg, plots_dir)
     return []
@@ -184,3 +186,41 @@ def replot_from_run(run_dir: Path) -> list[Path]:
     with metrics_path.open("r", encoding="utf-8") as fh:
         results = json.load(fh)
     return make_plots(results, cfg, run_dir)
+
+
+def _plot_scaling(results, cfg, plots_dir):
+    """Per-function trends; never aggregate incomparable raw function values."""
+    import matplotlib.pyplot as plt
+
+    df = pd.DataFrame(results["summary"])
+    paths = []
+    for mode in df.budget_mode.unique():
+        mode_df = df[df.budget_mode == mode]
+        for metric, ylabel in (("relative_error", "Best error / common random-reference median"),
+                               ("elapsed_seconds", "Wall time (seconds)")):
+            functions = list(mode_df.function.unique())
+            fig, axes = plt.subplots(1, len(functions), figsize=(4.2*len(functions), 4), squeeze=False)
+            for ax, function in zip(axes[0], functions):
+                sub = mode_df[mode_df.function == function]
+                for algo, group in sub.groupby("algorithm", sort=False):
+                    group = group.sort_values("dimension")
+                    valid = (group.n_failed == 0) & group[metric+"_median"].notna()
+                    # Failed groups produce gaps, rather than successful-looking curves.
+                    values = group[metric+"_median"].where(valid).to_numpy(float)
+                    lower = group[metric+"_q25"].where(valid).to_numpy(float)
+                    upper = group[metric+"_q75"].where(valid).to_numpy(float)
+                    ax.plot(group.dimension, values, marker="o", ms=3, label=algo)
+                    ax.fill_between(group.dimension.to_numpy(), lower, upper, alpha=.12)
+                ax.set_title(function.replace("_", " "))
+                ax.set_xlabel("Dimension")
+                ax.set_yscale("symlog", linthresh=1e-10)
+                ax.grid(alpha=.25)
+            axes[0, 0].set_ylabel(ylabel)
+            axes[0, -1].legend(fontsize=7)
+            fig.suptitle(f"{mode} evaluation budget — median and interquartile range")
+            fig.tight_layout()
+            path = plots_dir / f"scaling_{mode}_{metric}.png"
+            fig.savefig(path, dpi=150)
+            plt.close(fig)
+            paths.append(path)
+    return paths

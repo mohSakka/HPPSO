@@ -1,0 +1,7 @@
+{
+  "relative_cell_widths": [0.000001, 0.00001, 0.0001, 0.001, 0.01],
+  "reference_cell_width": 0.0001,
+  "grid_offsets": 16,
+  "grid_seed": 67023,
+  "workers": 3
+}

@@ -1,0 +1,90 @@
+{
+  "dimension": 1000,
+  "population": 500,
+  "budget": 3000000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "functions": [
+    "f1_sphere",
+    "f2_schwefel_2_22",
+    "f3_zakharov",
+    "f4_rosenbrock",
+    "f5_powell_sum",
+    "f6_rastrigin",
+    "f7_ackley",
+    "f8_griewank",
+    "f9_weierstrass",
+    "f10_levy"
+  ],
+  "instance_seed": 42,
+  "w": 0.65,
+  "c1": 2.0,
+  "c2": 2.0,
+  "trace_points": 300,
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 2026,
+  "eta": 0.001,
+  "alpha_mut": 0.05,
+  "theta": 0.5,
+  "lam": 0.4,
+  "stagnation_threshold": 10,
+  "shared_level": 0.5,
+  "shared_openness": "probability",
+  "grid_mode": "one_at_a_time",
+  "pso_m_rate": 0.05,
+  "pso_m_strength": 0.1,
+  "etas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1
+  ],
+  "alphas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "thetas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "lambdas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "velocity_initialization": "zeros",
+  "coordinatewise_hppso_draws": true,
+  "groups": [
+    "hppso_openness_peer_rules"
+  ],
+  "function_display_names": {
+    "f1_sphere": "Shifted Sphere",
+    "f2_schwefel_2_22": "Shifted Schwefel 2.22 (log1p cost)",
+    "f3_zakharov": "Shifted Zakharov",
+    "f4_rosenbrock": "Shifted Rosenbrock",
+    "f5_powell_sum": "Shifted Powell Sum",
+    "f6_rastrigin": "Shifted Rastrigin",
+    "f7_ackley": "Shifted Ackley",
+    "f8_griewank": "Shifted Griewank",
+    "f9_weierstrass": "Shifted Weierstrass",
+    "f10_levy": "Shifted Levy"
+  }
+}

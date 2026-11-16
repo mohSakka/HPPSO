@@ -1,0 +1,153 @@
+{
+  "dimension": 100,
+  "population": 50,
+  "budget": 60000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "functions": [
+    "f1_sphere",
+    "f10_levy",
+    "f13_michalewicz",
+    "f26_rotated_griewank",
+    "f7_ackley",
+    "f22_rotated_ellipsoid",
+    "f4_rosenbrock",
+    "f25_composition",
+    "f28_schwefel_1_2",
+    "f29_rotated_schaffer_f7"
+  ],
+  "instance_seed": 42,
+  "w": 0.65,
+  "c1": 2.0,
+  "c2": 2.0,
+  "trace_points": 300,
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 2026,
+  "eta": 0.001,
+  "alpha_mut": 0.05,
+  "theta": 0.5,
+  "lam": 0.4,
+  "stagnation_threshold": 10,
+  "shared_level": 0.5,
+  "shared_openness": "probability",
+  "grid_mode": "one_at_a_time",
+  "pso_m_rate": 0.05,
+  "pso_m_strength": 0.1,
+  "etas": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1
+  ],
+  "alphas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "thetas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "lambdas": [
+    0.1,
+    0.3,
+    0.5,
+    0.7,
+    1.0
+  ],
+  "velocity_initialization": "zeros",
+  "coordinatewise_hppso_draws": true,
+  "groups": [
+    "factorial",
+    "hp_ablation"
+  ],
+  "function_selection": {
+    "seed": 20261113,
+    "pool": [
+      "f10_levy",
+      "f14_alpine_1",
+      "f17_bent_cigar",
+      "f18_discus",
+      "f19_penalized_1",
+      "f1_sphere",
+      "f21_expanded_schaffer_f6",
+      "f22_rotated_ellipsoid",
+      "f23_rotated_rastrigin",
+      "f24_rotated_ackley",
+      "f25_composition",
+      "f26_rotated_griewank",
+      "f27_rotated_discus",
+      "f29_rotated_schaffer_f7",
+      "f30_composition_multimodal",
+      "f31_composition_ridges",
+      "f3_zakharov",
+      "f4_rosenbrock",
+      "f6_rastrigin",
+      "f7_ackley",
+      "f8_griewank"
+    ],
+    "method": "uniform without replacement"
+  },
+  "added_function_selection": {
+    "seed": 20261114,
+    "pool": [
+      "f21_expanded_schaffer_f6",
+      "f22_rotated_ellipsoid",
+      "f23_rotated_rastrigin",
+      "f24_rotated_ackley",
+      "f25_composition",
+      "f27_rotated_discus",
+      "f28_schwefel_1_2",
+      "f29_rotated_schaffer_f7",
+      "f30_composition_multimodal"
+    ],
+    "method": "uniform without replacement"
+  },
+  "function_replacements": {
+    "f24_rotated_ackley": "f4_rosenbrock",
+    "f19_penalized_1": "f13_michalewicz"
+  },
+  "function_display_names": {
+    "f1_sphere": "Shifted Sphere",
+    "f10_levy": "Shifted L\u00e9vy",
+    "f13_michalewicz": "Shifted Michalewicz",
+    "f26_rotated_griewank": "Rotated Griewank",
+    "f7_ackley": "Shifted Ackley",
+    "f22_rotated_ellipsoid": "Rotated Ellipsoid",
+    "f4_rosenbrock": "Shifted Rosenbrock",
+    "f25_composition": "Composition",
+    "f28_schwefel_1_2": "Schwefel 1.2",
+    "f29_rotated_schaffer_f7": "Rotated Schaffer F7"
+  },
+  "reuse_baseline": {
+    "directory": "experiments/results/ablation_fresh/04_aggressiveness",
+    "fingerprint": "f3dacac08fe4d93cc5eb00c78b23a0ef11da2ee40f2b266c98729354373df545"
+  },
+  "factorial_pso_control": true,
+  "factorial_response": "relative_objective_change",
+  "reuse_comparators": {
+    "PSO-m": {
+      "directory": "experiments/results/ablation_fresh/06_curiosity_shared_per_iteration",
+      "fingerprint": "f0348e18f60fed7828e0a31ab7e98ff74cf4b596291a43d2ef06f74bd7d0630d"
+    },
+    "PSO-RIW": {
+      "directory": "experiments/results/ablation_fresh/04_aggressiveness",
+      "fingerprint": "f3dacac08fe4d93cc5eb00c78b23a0ef11da2ee40f2b266c98729354373df545"
+    }
+  }
+}

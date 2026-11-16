@@ -26,8 +26,20 @@ def paper_to_internal(name: str) -> str | None:
     return None
 
 
+def invalid_functions(dataset: MergedDataset) -> set[str]:
+    """Exclude a whole function if any algorithm has missing/non-finite runs."""
+    invalid = set()
+    for func in dataset.functions():
+        for algo in dataset.algorithms():
+            values = np.asarray(dataset.best_costs.get((func, algo), []), dtype=float)
+            if values.size == 0 or not np.all(np.isfinite(values)):
+                invalid.add(func)
+    return invalid
+
+
 def summarize_performance(dataset: MergedDataset) -> pd.DataFrame:
     rows: list[dict] = []
+    excluded = invalid_functions(dataset)
     for func in FUNCTION_NAMES:
         for (f, algo), scores in dataset.best_costs.items():
             if f != func:
@@ -38,13 +50,16 @@ def summarize_performance(dataset: MergedDataset) -> pd.DataFrame:
                     "function": func,
                     "algorithm_internal": algo,
                     "algorithm": internal_to_paper(algo),
-                    "mean": float(np.nanmean(arr)),
-                    "std": float(np.nanstd(arr)),
-                    "n_runs": int(np.sum(~np.isnan(arr))),
+                    "mean": float(np.mean(arr)) if np.all(np.isfinite(arr)) and arr.size else np.nan,
+                    "std": float(np.std(arr)) if np.all(np.isfinite(arr)) and arr.size else np.nan,
+                    "n_runs": int(arr.size),
+                    "n_invalid": int(np.sum(~np.isfinite(arr))),
+                    "analysis_included": func not in excluded,
                 }
             )
     df = pd.DataFrame(rows)
     df["rank"] = df.groupby("function")["mean"].rank(method="average", ascending=True)
+    df.loc[~df["analysis_included"], "rank"] = np.nan
     return df.sort_values(["function", "rank"]).reset_index(drop=True)
 
 
@@ -67,7 +82,7 @@ def wilcoxon_pairwise_scores(
     paired run scores across all functions (and runs), then count wins/ties.
     Normalized score = (wins + 0.5 * ties) / total * 100.
     """
-    exclude_functions = exclude_functions or set()
+    exclude_functions = (exclude_functions or set()) | invalid_functions(dataset)
     functions = [f for f in FUNCTION_NAMES if f not in exclude_functions]
     algorithms = dataset.algorithms()
 
@@ -95,7 +110,7 @@ def wilcoxon_pairwise_scores(
                 n = min(len(a), len(b))
                 a = a[:n]
                 b = b[:n]
-                mask = ~np.isnan(a) & ~np.isnan(b)
+                mask = np.isfinite(a) & np.isfinite(b)
                 a = a[mask]
                 b = b[mask]
                 if len(a) < 2:
@@ -108,10 +123,17 @@ def wilcoxon_pairwise_scores(
             if len(a_all_arr) < 2:
                 continue
 
+            if np.array_equal(a_all_arr, b_all_arr):
+                ties += 1
+                continue
+
             try:
                 _, p = wilcoxon(a_all_arr, b_all_arr)
             except ValueError:
                 ties += 1
+                continue
+
+            if not np.isfinite(p):
                 continue
 
             mean_a = float(np.mean(a_all_arr))
@@ -124,7 +146,7 @@ def wilcoxon_pairwise_scores(
                 losses += 1
 
         total = wins + ties + losses
-        norm = (wins + 0.5 * ties) / total * 100 if total else 0.0
+        norm = (wins + 0.5 * ties) / total * 100 if total else np.nan
         results.append(
             {
                 "algorithm": internal_to_paper(algo),

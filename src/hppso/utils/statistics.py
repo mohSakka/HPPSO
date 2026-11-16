@@ -10,7 +10,9 @@ from scipy.stats import wilcoxon
 def rank_algorithms(results_df: pd.DataFrame, score_col: str = "Mean Best Score") -> pd.DataFrame:
     """Rank algorithms within each function group (lower is better)."""
     ranked = results_df.copy()
-    ranked["Rank"] = ranked.groupby("Function")[score_col].rank(method="average")
+    valid = np.isfinite(ranked[score_col])
+    complete = valid.groupby(ranked["Function"]).transform("all")
+    ranked["Rank"] = ranked[score_col].where(complete).groupby(ranked["Function"]).rank(method="average")
     return ranked
 
 
@@ -34,6 +36,14 @@ def wilcoxon_vs_baseline(
     for algo, scores in scores_by_algo.items():
         if algo == baseline:
             continue
-        stat, p = wilcoxon(scores, base, alternative="two-sided")
+        a, b = np.asarray(scores, dtype=float), np.asarray(base, dtype=float)
+        if a.shape != b.shape:
+            raise ValueError("Wilcoxon requires aligned paired runs")
+        if a.size < 2 or not (np.all(np.isfinite(a)) and np.all(np.isfinite(b))):
+            stat, p = np.nan, np.nan
+        elif np.array_equal(a, b):
+            stat, p = 0.0, 1.0
+        else:
+            stat, p = wilcoxon(a, b, alternative="two-sided")
         rows.append({"Algorithm": algo, "Statistic": stat, "p-value": p})
     return pd.DataFrame(rows)

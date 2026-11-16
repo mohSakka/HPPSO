@@ -53,6 +53,27 @@ class CMAES:
 
         self.lower_bounds = np.atleast_1d(lower_bounds)
         self.upper_bounds = np.atleast_1d(upper_bounds)
+        widths = self.upper_bounds - self.lower_bounds
+        self.scale = float(np.max(widths[widths > 0])) if np.any(widths > 0) else 1.0
+        self.covariance_repairs = 0
+        self.sigma_clips = 0
+
+    def _decompose_covariance(self):
+        """Keep covariance positive definite with condition number <= 1e14."""
+        if not np.isfinite(self.C).all():
+            raise FloatingPointError("CMA-ES covariance contains non-finite values")
+        self.C = (self.C + self.C.T) * 0.5
+        values, vectors = np.linalg.eigh(self.C)
+        floor = max(float(values.max()) / 1e14, np.finfo(float).tiny)
+        repaired = np.maximum(values, floor)
+        if np.any(values < floor):
+            self.covariance_repairs += 1
+            self.C = (vectors * repaired) @ vectors.T
+            self.C = (self.C + self.C.T) * 0.5
+        idx = repaired.argsort()[::-1]
+        self.D = np.sqrt(repaired[idx]).reshape(-1, 1)
+        self.B = vectors[:, idx]
+        self.invsqrtC = (self.B * (1 / self.D[:, 0])) @ self.B.T
 
     def optimize(self):
         counteval = 0
@@ -113,16 +134,16 @@ class CMAES:
                 + self.cmu * artmp @ np.diag(self.weights) @ artmp.T
             )
 
-            self.sigma *= np.exp((self.cs / self.damps) * (np.linalg.norm(self.ps) / self.chiN - 1))
+            log_sigma = np.log(self.sigma) + (self.cs / self.damps) * (np.linalg.norm(self.ps) / self.chiN - 1)
+            if not np.isfinite(log_sigma):
+                raise FloatingPointError("CMA-ES step-size update is non-finite")
+            bounded = np.clip(log_sigma, np.log(self.scale) - 32, np.log(self.scale) + 14)
+            self.sigma_clips += int(bounded != log_sigma)
+            self.sigma = float(np.exp(bounded))
 
             if counteval - self.eigeneval > (self.lam / (self.c1 + self.cmu) / self.N / 10) and counteval > 0:
                 self.eigeneval = counteval
-                self.C = np.triu(self.C) + np.triu(self.C, 1).T
-                D_raw, B_raw = np.linalg.eigh(self.C)
-                idx = D_raw.argsort()[::-1]
-                self.D = np.sqrt(D_raw[idx]).reshape(-1, 1)
-                self.B = B_raw[:, idx]
-                self.invsqrtC = self.B @ np.diag(self.D[:, 0] ** -1) @ self.B.T
+                self._decompose_covariance()
 
             if arfitness[arindex[0]] <= self.stopfitness:
                 break
