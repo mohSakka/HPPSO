@@ -147,10 +147,20 @@ class TraitTests(unittest.TestCase):
             x=rng.uniform(lo,hi,(3,4,100))
             scalar=np.array([[problem['function'](row) for row in block] for block in x])
             np.testing.assert_allclose(BatchFunction(problem)(x),scalar,rtol=5e-12,atol=1e-9,err_msg=name)
-            offset=1 if name in ('f4_rosenbrock','f10_levy') else -1 if name=='f19_penalized_1' else 0
-            optimum=np.asarray(problem['shift_vector'])+offset
-            self.assertTrue(np.all(optimum>=lo)&np.all(optimum<=hi))
-            self.assertLess(abs(float(BatchFunction(problem)(optimum))),1e-9,name)
+            if name == 'f13_michalewicz':
+                # Its minimum is negative and the minimizing coordinates differ.
+                continue
+            offset = {
+                'f4_rosenbrock': 1.0,
+                'f10_levy': 1.0,
+                'f11_schwefel_2_26': 420.9687462275036,
+                'f19_penalized_1': -1.0,
+            }.get(name, 0.0)
+            optimum = np.asarray(problem['shift_vector']) + offset
+            self.assertTrue(np.all((lo <= optimum) & (optimum <= hi)))
+            # The published Schwefel offset is rounded to four decimal places.
+            tolerance = optimum.size * 0.00005 if name == 'f11_schwefel_2_26' else 1e-9
+            self.assertLess(abs(float(BatchFunction(problem)(optimum))), tolerance, name)
         for name in ('f30_composition_multimodal','f31_composition_ridges'):
             obj=problems[name]['function'];centers=obj.shift+obj.center_offsets
             np.testing.assert_allclose(BatchFunction(problems[name])(centers),[0,100,200],rtol=1e-7,atol=1e-9)
