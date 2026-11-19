@@ -1,0 +1,1081 @@
+dimension,function,algorithm,rank,significant_wins,significant_losses,nonsignificant
+30,f1_sphere,Original PSO,4.0,5,3,0
+30,f1_sphere,PSO-m,6.5,2,5,1
+30,f1_sphere,PSO-RIW,5.0,4,4,0
+30,f1_sphere,HPPSO,3.0,6,2,0
+30,f1_sphere,GA-MPC,6.5,2,5,1
+30,f1_sphere,GWO,8.5,0,7,1
+30,f1_sphere,SHADE,2.0,7,1,0
+30,f1_sphere,CSA,8.5,0,7,1
+30,f1_sphere,CMA-ES,1.0,8,0,0
+30,f2_schwefel_2_22,Original PSO,4.0,5,3,0
+30,f2_schwefel_2_22,PSO-m,6.5,2,5,1
+30,f2_schwefel_2_22,PSO-RIW,5.0,4,4,0
+30,f2_schwefel_2_22,HPPSO,3.0,6,2,0
+30,f2_schwefel_2_22,GA-MPC,6.5,2,5,1
+30,f2_schwefel_2_22,GWO,8.0,1,7,0
+30,f2_schwefel_2_22,SHADE,2.0,7,1,0
+30,f2_schwefel_2_22,CSA,9.0,0,8,0
+30,f2_schwefel_2_22,CMA-ES,1.0,8,0,0
+30,f3_zakharov,Original PSO,4.5,4,3,1
+30,f3_zakharov,PSO-m,6.0,3,5,0
+30,f3_zakharov,PSO-RIW,4.5,4,3,1
+30,f3_zakharov,HPPSO,2.5,6,1,1
+30,f3_zakharov,GA-MPC,7.0,2,6,0
+30,f3_zakharov,GWO,8.0,1,7,0
+30,f3_zakharov,SHADE,2.5,6,1,1
+30,f3_zakharov,CSA,9.0,0,8,0
+30,f3_zakharov,CMA-ES,1.0,8,0,0
+30,f4_rosenbrock,Original PSO,4.5,4,3,1
+30,f4_rosenbrock,PSO-m,6.0,3,5,0
+30,f4_rosenbrock,PSO-RIW,4.5,4,3,1
+30,f4_rosenbrock,HPPSO,2.5,6,1,1
+30,f4_rosenbrock,GA-MPC,7.0,2,6,0
+30,f4_rosenbrock,GWO,8.5,0,7,1
+30,f4_rosenbrock,SHADE,2.5,6,1,1
+30,f4_rosenbrock,CSA,8.5,0,7,1
+30,f4_rosenbrock,CMA-ES,1.0,8,0,0
+30,f5_powell_sum,Original PSO,2.0,7,1,0
+30,f5_powell_sum,PSO-m,6.0,3,5,0
+30,f5_powell_sum,PSO-RIW,3.0,6,2,0
+30,f5_powell_sum,HPPSO,7.0,2,6,0
+30,f5_powell_sum,GA-MPC,5.0,4,4,0
+30,f5_powell_sum,GWO,8.0,1,7,0
+30,f5_powell_sum,SHADE,1.0,8,0,0
+30,f5_powell_sum,CSA,9.0,0,8,0
+30,f5_powell_sum,CMA-ES,4.0,5,3,0
+30,f6_rastrigin,Original PSO,3.0,5,2,1
+30,f6_rastrigin,PSO-m,7.0,2,6,0
+30,f6_rastrigin,PSO-RIW,4.0,4,2,2
+30,f6_rastrigin,HPPSO,5.0,3,3,2
+30,f6_rastrigin,GA-MPC,6.0,3,4,1
+30,f6_rastrigin,GWO,8.5,0,7,1
+30,f6_rastrigin,SHADE,1.0,8,0,0
+30,f6_rastrigin,CSA,8.5,0,7,1
+30,f6_rastrigin,CMA-ES,2.0,7,1,0
+30,f7_ackley,Original PSO,2.0,7,1,0
+30,f7_ackley,PSO-m,5.5,3,4,1
+30,f7_ackley,PSO-RIW,3.0,6,2,0
+30,f7_ackley,HPPSO,5.5,3,4,1
+30,f7_ackley,GA-MPC,7.0,2,6,0
+30,f7_ackley,GWO,8.0,1,7,0
+30,f7_ackley,SHADE,4.0,5,3,0
+30,f7_ackley,CSA,9.0,0,8,0
+30,f7_ackley,CMA-ES,1.0,8,0,0
+30,f8_griewank,Original PSO,4.0,5,3,0
+30,f8_griewank,PSO-m,6.0,3,5,0
+30,f8_griewank,PSO-RIW,5.0,4,4,0
+30,f8_griewank,HPPSO,2.5,6,1,1
+30,f8_griewank,GA-MPC,7.0,2,6,0
+30,f8_griewank,GWO,8.0,1,7,0
+30,f8_griewank,SHADE,2.5,6,1,1
+30,f8_griewank,CSA,9.0,0,8,0
+30,f8_griewank,CMA-ES,1.0,8,0,0
+30,f9_weierstrass,Original PSO,2.5,6,1,1
+30,f9_weierstrass,PSO-m,5.5,3,4,1
+30,f9_weierstrass,PSO-RIW,4.0,5,3,0
+30,f9_weierstrass,HPPSO,7.0,2,6,0
+30,f9_weierstrass,GA-MPC,5.5,3,4,1
+30,f9_weierstrass,GWO,8.0,1,7,0
+30,f9_weierstrass,SHADE,2.5,6,1,1
+30,f9_weierstrass,CSA,9.0,0,8,0
+30,f9_weierstrass,CMA-ES,1.0,8,0,0
+30,f10_levy,Original PSO,3.5,4,1,3
+30,f10_levy,PSO-m,3.5,4,1,3
+30,f10_levy,PSO-RIW,3.5,4,1,3
+30,f10_levy,HPPSO,6.5,2,5,1
+30,f10_levy,GA-MPC,6.5,2,5,1
+30,f10_levy,GWO,8.0,1,7,0
+30,f10_levy,SHADE,3.5,4,1,3
+30,f10_levy,CSA,9.0,0,8,0
+30,f10_levy,CMA-ES,1.0,8,0,0
+30,f11_schwefel_2_26,Original PSO,3.0,5,1,2
+30,f11_schwefel_2_26,PSO-m,5.0,3,4,1
+30,f11_schwefel_2_26,PSO-RIW,3.0,5,1,2
+30,f11_schwefel_2_26,HPPSO,7.5,0,5,3
+30,f11_schwefel_2_26,GA-MPC,3.0,5,1,2
+30,f11_schwefel_2_26,GWO,9.0,0,6,2
+30,f11_schwefel_2_26,SHADE,1.0,8,0,0
+30,f11_schwefel_2_26,CSA,7.5,0,5,3
+30,f11_schwefel_2_26,CMA-ES,6.0,1,4,3
+30,f12_styblinski_tang,Original PSO,5.0,2,2,4
+30,f12_styblinski_tang,PSO-m,5.0,2,2,4
+30,f12_styblinski_tang,PSO-RIW,5.0,2,2,4
+30,f12_styblinski_tang,HPPSO,5.0,2,2,4
+30,f12_styblinski_tang,GA-MPC,5.0,2,2,4
+30,f12_styblinski_tang,GWO,8.5,0,7,1
+30,f12_styblinski_tang,SHADE,1.5,7,0,1
+30,f12_styblinski_tang,CSA,8.5,0,7,1
+30,f12_styblinski_tang,CMA-ES,1.5,7,0,1
+30,f13_michalewicz,Original PSO,3.0,5,1,2
+30,f13_michalewicz,PSO-m,7.0,2,6,0
+30,f13_michalewicz,PSO-RIW,3.0,5,1,2
+30,f13_michalewicz,HPPSO,5.5,3,4,1
+30,f13_michalewicz,GA-MPC,5.5,3,4,1
+30,f13_michalewicz,GWO,9.0,0,8,0
+30,f13_michalewicz,SHADE,1.0,8,0,0
+30,f13_michalewicz,CSA,8.0,1,7,0
+30,f13_michalewicz,CMA-ES,3.0,5,1,2
+30,f14_alpine_1,Original PSO,4.5,4,3,1
+30,f14_alpine_1,PSO-m,7.0,2,6,0
+30,f14_alpine_1,PSO-RIW,4.5,4,3,1
+30,f14_alpine_1,HPPSO,3.0,6,2,0
+30,f14_alpine_1,GA-MPC,6.0,3,5,0
+30,f14_alpine_1,GWO,8.0,1,7,0
+30,f14_alpine_1,SHADE,1.5,7,0,1
+30,f14_alpine_1,CSA,9.0,0,8,0
+30,f14_alpine_1,CMA-ES,1.5,7,0,1
+30,f15_happy_cat,Original PSO,4.0,4,2,2
+30,f15_happy_cat,PSO-m,6.0,3,5,0
+30,f15_happy_cat,PSO-RIW,4.0,4,2,2
+30,f15_happy_cat,HPPSO,4.0,4,2,2
+30,f15_happy_cat,GA-MPC,7.0,2,6,0
+30,f15_happy_cat,GWO,8.0,1,7,0
+30,f15_happy_cat,SHADE,2.0,7,1,0
+30,f15_happy_cat,CSA,9.0,0,8,0
+30,f15_happy_cat,CMA-ES,1.0,8,0,0
+30,f16_hgbat,Original PSO,3.0,4,0,4
+30,f16_hgbat,PSO-m,6.5,2,5,1
+30,f16_hgbat,PSO-RIW,3.0,4,0,4
+30,f16_hgbat,HPPSO,5.0,4,1,3
+30,f16_hgbat,GA-MPC,6.5,2,5,1
+30,f16_hgbat,GWO,8.5,0,7,1
+30,f16_hgbat,SHADE,3.0,4,0,4
+30,f16_hgbat,CSA,8.5,0,7,1
+30,f16_hgbat,CMA-ES,1.0,5,0,3
+30,f17_bent_cigar,Original PSO,4.0,5,3,0
+30,f17_bent_cigar,PSO-m,6.0,3,5,0
+30,f17_bent_cigar,PSO-RIW,5.0,4,4,0
+30,f17_bent_cigar,HPPSO,3.0,6,2,0
+30,f17_bent_cigar,GA-MPC,7.0,2,6,0
+30,f17_bent_cigar,GWO,8.0,1,7,0
+30,f17_bent_cigar,SHADE,2.0,7,1,0
+30,f17_bent_cigar,CSA,9.0,0,8,0
+30,f17_bent_cigar,CMA-ES,1.0,8,0,0
+30,f18_discus,Original PSO,4.0,5,3,0
+30,f18_discus,PSO-m,6.0,3,5,0
+30,f18_discus,PSO-RIW,5.0,4,4,0
+30,f18_discus,HPPSO,3.0,6,2,0
+30,f18_discus,GA-MPC,7.0,2,6,0
+30,f18_discus,GWO,8.0,1,7,0
+30,f18_discus,SHADE,1.0,8,0,0
+30,f18_discus,CSA,9.0,0,8,0
+30,f18_discus,CMA-ES,2.0,7,1,0
+30,f19_penalized_1,Original PSO,4.0,5,2,1
+30,f19_penalized_1,PSO-m,5.5,3,4,1
+30,f19_penalized_1,PSO-RIW,3.0,5,1,2
+30,f19_penalized_1,HPPSO,5.5,3,4,1
+30,f19_penalized_1,GA-MPC,8.0,0,6,2
+30,f19_penalized_1,GWO,8.0,0,6,2
+30,f19_penalized_1,SHADE,2.0,6,1,1
+30,f19_penalized_1,CSA,8.0,0,6,2
+30,f19_penalized_1,CMA-ES,1.0,8,0,0
+30,f20_zakharov_2,Original PSO,3.0,4,1,3
+30,f20_zakharov_2,PSO-m,7.0,2,6,0
+30,f20_zakharov_2,PSO-RIW,4.5,3,2,3
+30,f20_zakharov_2,HPPSO,4.5,3,2,3
+30,f20_zakharov_2,GA-MPC,6.0,3,3,2
+30,f20_zakharov_2,GWO,8.5,0,7,1
+30,f20_zakharov_2,SHADE,1.0,8,0,0
+30,f20_zakharov_2,CSA,8.5,0,7,1
+30,f20_zakharov_2,CMA-ES,2.0,6,1,1
+30,f21_expanded_schaffer_f6,Original PSO,5.0,4,2,2
+30,f21_expanded_schaffer_f6,PSO-m,6.0,2,5,1
+30,f21_expanded_schaffer_f6,PSO-RIW,3.5,4,1,3
+30,f21_expanded_schaffer_f6,HPPSO,2.0,5,1,2
+30,f21_expanded_schaffer_f6,GA-MPC,3.5,4,1,3
+30,f21_expanded_schaffer_f6,GWO,8.5,0,6,2
+30,f21_expanded_schaffer_f6,SHADE,1.0,8,0,0
+30,f21_expanded_schaffer_f6,CSA,8.5,0,6,2
+30,f21_expanded_schaffer_f6,CMA-ES,7.0,0,5,3
+30,f22_rotated_ellipsoid,Original PSO,5.5,2,3,3
+30,f22_rotated_ellipsoid,PSO-m,7.0,1,4,3
+30,f22_rotated_ellipsoid,PSO-RIW,4.0,3,3,2
+30,f22_rotated_ellipsoid,HPPSO,3.0,6,2,0
+30,f22_rotated_ellipsoid,GA-MPC,5.5,2,3,3
+30,f22_rotated_ellipsoid,GWO,8.0,1,6,1
+30,f22_rotated_ellipsoid,SHADE,2.0,7,1,0
+30,f22_rotated_ellipsoid,CSA,9.0,0,8,0
+30,f22_rotated_ellipsoid,CMA-ES,1.0,8,0,0
+30,f23_rotated_rastrigin,Original PSO,5.0,3,3,2
+30,f23_rotated_rastrigin,PSO-m,7.0,1,6,1
+30,f23_rotated_rastrigin,PSO-RIW,5.0,3,3,2
+30,f23_rotated_rastrigin,HPPSO,3.0,6,2,0
+30,f23_rotated_rastrigin,GA-MPC,5.0,3,3,2
+30,f23_rotated_rastrigin,GWO,8.0,0,6,2
+30,f23_rotated_rastrigin,SHADE,2.0,7,1,0
+30,f23_rotated_rastrigin,CSA,9.0,0,7,1
+30,f23_rotated_rastrigin,CMA-ES,1.0,8,0,0
+30,f24_rotated_ackley,Original PSO,3.0,5,1,2
+30,f24_rotated_ackley,PSO-m,6.0,2,4,2
+30,f24_rotated_ackley,PSO-RIW,4.0,5,2,1
+30,f24_rotated_ackley,HPPSO,6.0,2,4,2
+30,f24_rotated_ackley,GA-MPC,6.0,2,4,2
+30,f24_rotated_ackley,GWO,8.0,1,7,0
+30,f24_rotated_ackley,SHADE,2.0,6,1,1
+30,f24_rotated_ackley,CSA,9.0,0,8,0
+30,f24_rotated_ackley,CMA-ES,1.0,8,0,0
+30,f25_composition,Original PSO,5.0,2,3,3
+30,f25_composition,PSO-m,8.0,1,6,1
+30,f25_composition,PSO-RIW,5.0,2,3,3
+30,f25_composition,HPPSO,2.5,6,1,1
+30,f25_composition,GA-MPC,5.0,2,3,3
+30,f25_composition,GWO,7.0,1,3,4
+30,f25_composition,SHADE,2.5,6,1,1
+30,f25_composition,CSA,9.0,0,8,0
+30,f25_composition,CMA-ES,1.0,8,0,0
+30,f26_rotated_griewank,Original PSO,4.0,5,3,0
+30,f26_rotated_griewank,PSO-m,6.0,3,5,0
+30,f26_rotated_griewank,PSO-RIW,5.0,4,4,0
+30,f26_rotated_griewank,HPPSO,2.5,6,1,1
+30,f26_rotated_griewank,GA-MPC,7.0,2,6,0
+30,f26_rotated_griewank,GWO,8.0,1,7,0
+30,f26_rotated_griewank,SHADE,2.5,6,1,1
+30,f26_rotated_griewank,CSA,9.0,0,8,0
+30,f26_rotated_griewank,CMA-ES,1.0,8,0,0
+30,f27_rotated_discus,Original PSO,5.0,3,3,2
+30,f27_rotated_discus,PSO-m,5.0,3,3,2
+30,f27_rotated_discus,PSO-RIW,5.0,3,3,2
+30,f27_rotated_discus,HPPSO,3.0,6,2,0
+30,f27_rotated_discus,GA-MPC,7.0,2,6,0
+30,f27_rotated_discus,GWO,8.0,1,7,0
+30,f27_rotated_discus,SHADE,2.0,7,1,0
+30,f27_rotated_discus,CSA,9.0,0,8,0
+30,f27_rotated_discus,CMA-ES,1.0,8,0,0
+30,f28_schwefel_1_2,Original PSO,4.5,4,3,1
+30,f28_schwefel_1_2,PSO-m,6.5,2,5,1
+30,f28_schwefel_1_2,PSO-RIW,4.5,4,3,1
+30,f28_schwefel_1_2,HPPSO,2.0,7,1,0
+30,f28_schwefel_1_2,GA-MPC,6.5,2,5,1
+30,f28_schwefel_1_2,GWO,8.0,1,7,0
+30,f28_schwefel_1_2,SHADE,3.0,6,2,0
+30,f28_schwefel_1_2,CSA,9.0,0,8,0
+30,f28_schwefel_1_2,CMA-ES,1.0,8,0,0
+30,f29_rotated_schaffer_f7,Original PSO,5.0,2,2,4
+30,f29_rotated_schaffer_f7,PSO-m,5.0,2,2,4
+30,f29_rotated_schaffer_f7,PSO-RIW,5.0,2,2,4
+30,f29_rotated_schaffer_f7,HPPSO,5.0,2,2,4
+30,f29_rotated_schaffer_f7,GA-MPC,5.0,2,2,4
+30,f29_rotated_schaffer_f7,GWO,8.0,1,7,0
+30,f29_rotated_schaffer_f7,SHADE,2.0,7,1,0
+30,f29_rotated_schaffer_f7,CSA,9.0,0,8,0
+30,f29_rotated_schaffer_f7,CMA-ES,1.0,8,0,0
+30,f30_composition_multimodal,Original PSO,4.0,5,3,0
+30,f30_composition_multimodal,PSO-m,6.0,3,5,0
+30,f30_composition_multimodal,PSO-RIW,5.0,4,4,0
+30,f30_composition_multimodal,HPPSO,3.0,6,2,0
+30,f30_composition_multimodal,GA-MPC,8.0,1,7,0
+30,f30_composition_multimodal,GWO,7.0,2,6,0
+30,f30_composition_multimodal,SHADE,2.0,7,1,0
+30,f30_composition_multimodal,CSA,9.0,0,8,0
+30,f30_composition_multimodal,CMA-ES,1.0,8,0,0
+300,f1_sphere,Original PSO,4.0,5,3,0
+300,f1_sphere,PSO-m,7.5,1,6,1
+300,f1_sphere,PSO-RIW,5.0,4,4,0
+300,f1_sphere,HPPSO,2.0,7,1,0
+300,f1_sphere,GA-MPC,6.0,3,5,0
+300,f1_sphere,GWO,9.0,0,8,0
+300,f1_sphere,SHADE,3.0,6,2,0
+300,f1_sphere,CSA,7.5,1,6,1
+300,f1_sphere,Sep-CMA-ES,1.0,8,0,0
+300,f2_schwefel_2_22,Original PSO,4.0,5,3,0
+300,f2_schwefel_2_22,PSO-m,7.5,1,6,1
+300,f2_schwefel_2_22,PSO-RIW,5.5,3,4,1
+300,f2_schwefel_2_22,HPPSO,2.0,7,1,0
+300,f2_schwefel_2_22,GA-MPC,5.5,3,4,1
+300,f2_schwefel_2_22,GWO,9.0,0,8,0
+300,f2_schwefel_2_22,SHADE,3.0,6,2,0
+300,f2_schwefel_2_22,CSA,7.5,1,6,1
+300,f2_schwefel_2_22,Sep-CMA-ES,1.0,8,0,0
+300,f3_zakharov,Original PSO,4.0,4,2,2
+300,f3_zakharov,PSO-m,5.0,4,3,1
+300,f3_zakharov,PSO-RIW,3.0,5,2,1
+300,f3_zakharov,HPPSO,2.0,7,1,0
+300,f3_zakharov,GA-MPC,7.5,1,6,1
+300,f3_zakharov,GWO,7.5,1,6,1
+300,f3_zakharov,SHADE,1.0,8,0,0
+300,f3_zakharov,CSA,9.0,0,8,0
+300,f3_zakharov,Sep-CMA-ES,6.0,3,5,0
+300,f4_rosenbrock,Original PSO,4.0,4,3,1
+300,f4_rosenbrock,PSO-m,7.5,1,6,1
+300,f4_rosenbrock,PSO-RIW,5.0,3,3,2
+300,f4_rosenbrock,HPPSO,2.0,7,1,0
+300,f4_rosenbrock,GA-MPC,6.0,3,4,1
+300,f4_rosenbrock,GWO,9.0,0,8,0
+300,f4_rosenbrock,SHADE,3.0,6,2,0
+300,f4_rosenbrock,CSA,7.5,1,6,1
+300,f4_rosenbrock,Sep-CMA-ES,1.0,8,0,0
+300,f5_powell_sum,Original PSO,3.0,6,2,0
+300,f5_powell_sum,PSO-m,7.0,2,6,0
+300,f5_powell_sum,PSO-RIW,4.5,4,3,1
+300,f5_powell_sum,HPPSO,6.0,3,5,0
+300,f5_powell_sum,GA-MPC,4.5,4,3,1
+300,f5_powell_sum,GWO,9.0,0,8,0
+300,f5_powell_sum,SHADE,2.0,7,1,0
+300,f5_powell_sum,CSA,8.0,1,7,0
+300,f5_powell_sum,Sep-CMA-ES,1.0,8,0,0
+300,f6_rastrigin,Original PSO,5.0,4,4,0
+300,f6_rastrigin,PSO-m,8.0,1,7,0
+300,f6_rastrigin,PSO-RIW,6.0,3,5,0
+300,f6_rastrigin,HPPSO,3.0,6,2,0
+300,f6_rastrigin,GA-MPC,4.0,5,3,0
+300,f6_rastrigin,GWO,9.0,0,8,0
+300,f6_rastrigin,SHADE,2.0,7,1,0
+300,f6_rastrigin,CSA,7.0,2,6,0
+300,f6_rastrigin,Sep-CMA-ES,1.0,8,0,0
+300,f7_ackley,Original PSO,2.0,6,1,1
+300,f7_ackley,PSO-m,7.0,2,6,0
+300,f7_ackley,PSO-RIW,4.0,5,2,1
+300,f7_ackley,HPPSO,5.5,3,4,1
+300,f7_ackley,GA-MPC,5.5,3,4,1
+300,f7_ackley,GWO,9.0,0,8,0
+300,f7_ackley,SHADE,3.0,5,1,2
+300,f7_ackley,CSA,8.0,1,7,0
+300,f7_ackley,Sep-CMA-ES,1.0,8,0,0
+300,f8_griewank,Original PSO,4.0,5,3,0
+300,f8_griewank,PSO-m,7.5,1,6,1
+300,f8_griewank,PSO-RIW,5.0,4,4,0
+300,f8_griewank,HPPSO,2.0,7,1,0
+300,f8_griewank,GA-MPC,6.0,3,5,0
+300,f8_griewank,GWO,9.0,0,8,0
+300,f8_griewank,SHADE,3.0,6,2,0
+300,f8_griewank,CSA,7.5,1,6,1
+300,f8_griewank,Sep-CMA-ES,1.0,8,0,0
+300,f9_weierstrass,Original PSO,4.0,5,3,0
+300,f9_weierstrass,PSO-m,7.5,1,6,1
+300,f9_weierstrass,PSO-RIW,5.0,4,4,0
+300,f9_weierstrass,HPPSO,6.0,3,5,0
+300,f9_weierstrass,GA-MPC,3.0,6,2,0
+300,f9_weierstrass,GWO,9.0,0,8,0
+300,f9_weierstrass,SHADE,2.0,7,1,0
+300,f9_weierstrass,CSA,7.5,1,6,1
+300,f9_weierstrass,Sep-CMA-ES,1.0,8,0,0
+300,f10_levy,Original PSO,5.5,3,4,1
+300,f10_levy,PSO-m,7.5,1,6,1
+300,f10_levy,PSO-RIW,5.5,3,4,1
+300,f10_levy,HPPSO,3.0,6,2,0
+300,f10_levy,GA-MPC,4.0,5,3,0
+300,f10_levy,GWO,9.0,0,8,0
+300,f10_levy,SHADE,2.0,7,1,0
+300,f10_levy,CSA,7.5,1,6,1
+300,f10_levy,Sep-CMA-ES,1.0,8,0,0
+300,f11_schwefel_2_26,Original PSO,5.5,3,3,2
+300,f11_schwefel_2_26,PSO-m,7.0,2,6,0
+300,f11_schwefel_2_26,PSO-RIW,5.5,3,3,2
+300,f11_schwefel_2_26,HPPSO,4.0,3,1,4
+300,f11_schwefel_2_26,GA-MPC,3.0,5,2,1
+300,f11_schwefel_2_26,GWO,9.0,0,8,0
+300,f11_schwefel_2_26,SHADE,1.0,8,0,0
+300,f11_schwefel_2_26,CSA,8.0,1,7,0
+300,f11_schwefel_2_26,Sep-CMA-ES,2.0,6,1,1
+300,f12_styblinski_tang,Original PSO,4.5,4,3,1
+300,f12_styblinski_tang,PSO-m,7.5,1,6,1
+300,f12_styblinski_tang,PSO-RIW,4.5,4,3,1
+300,f12_styblinski_tang,HPPSO,3.0,6,2,0
+300,f12_styblinski_tang,GA-MPC,6.0,3,5,0
+300,f12_styblinski_tang,GWO,9.0,0,8,0
+300,f12_styblinski_tang,SHADE,2.0,7,1,0
+300,f12_styblinski_tang,CSA,7.5,1,6,1
+300,f12_styblinski_tang,Sep-CMA-ES,1.0,8,0,0
+300,f13_michalewicz,Original PSO,5.5,3,4,1
+300,f13_michalewicz,PSO-m,8.0,1,7,0
+300,f13_michalewicz,PSO-RIW,5.5,3,4,1
+300,f13_michalewicz,HPPSO,1.0,7,0,1
+300,f13_michalewicz,GA-MPC,4.0,5,3,0
+300,f13_michalewicz,GWO,9.0,0,8,0
+300,f13_michalewicz,SHADE,3.0,6,1,1
+300,f13_michalewicz,CSA,7.0,2,6,0
+300,f13_michalewicz,Sep-CMA-ES,2.0,6,0,2
+300,f14_alpine_1,Original PSO,5.0,4,4,0
+300,f14_alpine_1,PSO-m,7.0,1,6,1
+300,f14_alpine_1,PSO-RIW,6.0,3,5,0
+300,f14_alpine_1,HPPSO,3.0,6,2,0
+300,f14_alpine_1,GA-MPC,4.0,5,3,0
+300,f14_alpine_1,GWO,9.0,0,7,1
+300,f14_alpine_1,SHADE,2.0,7,1,0
+300,f14_alpine_1,CSA,8.0,0,6,2
+300,f14_alpine_1,Sep-CMA-ES,1.0,8,0,0
+300,f15_happy_cat,Original PSO,4.0,5,3,0
+300,f15_happy_cat,PSO-m,7.5,1,6,1
+300,f15_happy_cat,PSO-RIW,5.0,4,4,0
+300,f15_happy_cat,HPPSO,2.5,6,1,1
+300,f15_happy_cat,GA-MPC,6.0,3,5,0
+300,f15_happy_cat,GWO,9.0,0,8,0
+300,f15_happy_cat,SHADE,2.5,6,1,1
+300,f15_happy_cat,CSA,7.5,1,6,1
+300,f15_happy_cat,Sep-CMA-ES,1.0,8,0,0
+300,f16_hgbat,Original PSO,4.0,5,3,0
+300,f16_hgbat,PSO-m,7.5,1,6,1
+300,f16_hgbat,PSO-RIW,5.0,4,4,0
+300,f16_hgbat,HPPSO,2.0,6,0,2
+300,f16_hgbat,GA-MPC,6.0,3,5,0
+300,f16_hgbat,GWO,9.0,0,8,0
+300,f16_hgbat,SHADE,2.0,6,0,2
+300,f16_hgbat,CSA,7.5,1,6,1
+300,f16_hgbat,Sep-CMA-ES,2.0,6,0,2
+300,f17_bent_cigar,Original PSO,4.0,5,3,0
+300,f17_bent_cigar,PSO-m,7.5,1,6,1
+300,f17_bent_cigar,PSO-RIW,5.5,3,4,1
+300,f17_bent_cigar,HPPSO,2.0,7,1,0
+300,f17_bent_cigar,GA-MPC,5.5,3,4,1
+300,f17_bent_cigar,GWO,9.0,0,8,0
+300,f17_bent_cigar,SHADE,3.0,6,2,0
+300,f17_bent_cigar,CSA,7.5,1,6,1
+300,f17_bent_cigar,Sep-CMA-ES,1.0,8,0,0
+300,f18_discus,Original PSO,4.0,5,3,0
+300,f18_discus,PSO-m,7.0,2,6,0
+300,f18_discus,PSO-RIW,5.0,4,4,0
+300,f18_discus,HPPSO,2.0,7,1,0
+300,f18_discus,GA-MPC,6.0,3,5,0
+300,f18_discus,GWO,9.0,0,8,0
+300,f18_discus,SHADE,3.0,6,2,0
+300,f18_discus,CSA,8.0,1,7,0
+300,f18_discus,Sep-CMA-ES,1.0,8,0,0
+300,f19_penalized_1,Original PSO,5.0,3,3,2
+300,f19_penalized_1,PSO-m,7.5,1,6,1
+300,f19_penalized_1,PSO-RIW,5.0,3,3,2
+300,f19_penalized_1,HPPSO,2.5,6,1,1
+300,f19_penalized_1,GA-MPC,5.0,3,3,2
+300,f19_penalized_1,GWO,9.0,0,8,0
+300,f19_penalized_1,SHADE,2.5,6,1,1
+300,f19_penalized_1,CSA,7.5,1,6,1
+300,f19_penalized_1,Sep-CMA-ES,1.0,8,0,0
+300,f20_zakharov_2,Original PSO,5.5,3,4,1
+300,f20_zakharov_2,PSO-m,9.0,0,8,0
+300,f20_zakharov_2,PSO-RIW,5.5,3,4,1
+300,f20_zakharov_2,HPPSO,2.5,6,1,1
+300,f20_zakharov_2,GA-MPC,4.0,5,3,0
+300,f20_zakharov_2,GWO,8.0,1,7,0
+300,f20_zakharov_2,SHADE,2.5,6,1,1
+300,f20_zakharov_2,CSA,7.0,2,6,0
+300,f20_zakharov_2,Sep-CMA-ES,1.0,8,0,0
+300,f21_expanded_schaffer_f6,Original PSO,4.0,4,3,1
+300,f21_expanded_schaffer_f6,PSO-m,7.5,1,5,2
+300,f21_expanded_schaffer_f6,PSO-RIW,5.0,3,3,2
+300,f21_expanded_schaffer_f6,HPPSO,2.0,7,1,0
+300,f21_expanded_schaffer_f6,GA-MPC,3.0,6,2,0
+300,f21_expanded_schaffer_f6,GWO,9.0,0,8,0
+300,f21_expanded_schaffer_f6,SHADE,1.0,8,0,0
+300,f21_expanded_schaffer_f6,CSA,7.5,1,5,2
+300,f21_expanded_schaffer_f6,Sep-CMA-ES,6.0,1,4,3
+300,f22_rotated_ellipsoid,Original PSO,5.5,3,4,1
+300,f22_rotated_ellipsoid,PSO-m,7.0,1,6,1
+300,f22_rotated_ellipsoid,PSO-RIW,5.5,3,4,1
+300,f22_rotated_ellipsoid,HPPSO,1.0,8,0,0
+300,f22_rotated_ellipsoid,GA-MPC,4.0,5,3,0
+300,f22_rotated_ellipsoid,GWO,9.0,0,7,1
+300,f22_rotated_ellipsoid,SHADE,2.5,6,1,1
+300,f22_rotated_ellipsoid,CSA,8.0,0,6,2
+300,f22_rotated_ellipsoid,Sep-CMA-ES,2.5,6,1,1
+300,f23_rotated_rastrigin,Original PSO,7.0,0,4,4
+300,f23_rotated_rastrigin,PSO-m,9.0,0,5,3
+300,f23_rotated_rastrigin,PSO-RIW,7.0,0,4,4
+300,f23_rotated_rastrigin,HPPSO,2.0,7,1,0
+300,f23_rotated_rastrigin,GA-MPC,4.0,5,3,0
+300,f23_rotated_rastrigin,GWO,7.0,0,4,4
+300,f23_rotated_rastrigin,SHADE,3.0,6,2,0
+300,f23_rotated_rastrigin,CSA,5.0,1,4,3
+300,f23_rotated_rastrigin,Sep-CMA-ES,1.0,8,0,0
+300,f24_rotated_ackley,Original PSO,4.0,4,2,2
+300,f24_rotated_ackley,PSO-m,7.0,2,6,0
+300,f24_rotated_ackley,PSO-RIW,4.0,4,2,2
+300,f24_rotated_ackley,HPPSO,6.0,3,5,0
+300,f24_rotated_ackley,GA-MPC,4.0,4,2,2
+300,f24_rotated_ackley,GWO,9.0,0,8,0
+300,f24_rotated_ackley,SHADE,2.0,7,1,0
+300,f24_rotated_ackley,CSA,8.0,1,7,0
+300,f24_rotated_ackley,Sep-CMA-ES,1.0,8,0,0
+300,f25_composition,Original PSO,5.5,3,4,1
+300,f25_composition,PSO-m,7.0,1,6,1
+300,f25_composition,PSO-RIW,5.5,3,4,1
+300,f25_composition,HPPSO,1.5,7,0,1
+300,f25_composition,GA-MPC,4.0,5,3,0
+300,f25_composition,GWO,9.0,0,7,1
+300,f25_composition,SHADE,3.0,6,2,0
+300,f25_composition,CSA,8.0,0,6,2
+300,f25_composition,Sep-CMA-ES,1.5,7,0,1
+300,f26_rotated_griewank,Original PSO,4.0,5,3,0
+300,f26_rotated_griewank,PSO-m,7.5,1,6,1
+300,f26_rotated_griewank,PSO-RIW,5.0,4,4,0
+300,f26_rotated_griewank,HPPSO,2.0,7,1,0
+300,f26_rotated_griewank,GA-MPC,6.0,3,5,0
+300,f26_rotated_griewank,GWO,9.0,0,8,0
+300,f26_rotated_griewank,SHADE,3.0,6,2,0
+300,f26_rotated_griewank,CSA,7.5,1,6,1
+300,f26_rotated_griewank,Sep-CMA-ES,1.0,8,0,0
+300,f27_rotated_discus,Original PSO,3.5,5,2,1
+300,f27_rotated_discus,PSO-m,5.0,3,4,1
+300,f27_rotated_discus,PSO-RIW,3.5,5,2,1
+300,f27_rotated_discus,HPPSO,2.0,7,1,0
+300,f27_rotated_discus,GA-MPC,6.0,2,5,1
+300,f27_rotated_discus,GWO,8.5,0,6,2
+300,f27_rotated_discus,SHADE,1.0,8,0,0
+300,f27_rotated_discus,CSA,7.0,0,4,4
+300,f27_rotated_discus,Sep-CMA-ES,8.5,0,6,2
+300,f28_schwefel_1_2,Original PSO,6.0,1,4,3
+300,f28_schwefel_1_2,PSO-m,9.0,0,7,1
+300,f28_schwefel_1_2,PSO-RIW,7.5,1,5,2
+300,f28_schwefel_1_2,HPPSO,1.0,8,0,0
+300,f28_schwefel_1_2,GA-MPC,4.0,5,3,0
+300,f28_schwefel_1_2,GWO,5.0,2,4,2
+300,f28_schwefel_1_2,SHADE,2.0,7,1,0
+300,f28_schwefel_1_2,CSA,7.5,0,4,4
+300,f28_schwefel_1_2,Sep-CMA-ES,3.0,6,2,0
+300,f29_rotated_schaffer_f7,Original PSO,7.0,0,4,4
+300,f29_rotated_schaffer_f7,PSO-m,7.0,0,4,4
+300,f29_rotated_schaffer_f7,PSO-RIW,7.0,0,4,4
+300,f29_rotated_schaffer_f7,HPPSO,3.0,6,2,0
+300,f29_rotated_schaffer_f7,GA-MPC,4.0,5,3,0
+300,f29_rotated_schaffer_f7,GWO,7.0,0,4,4
+300,f29_rotated_schaffer_f7,SHADE,2.0,7,1,0
+300,f29_rotated_schaffer_f7,CSA,7.0,0,4,4
+300,f29_rotated_schaffer_f7,Sep-CMA-ES,1.0,8,0,0
+300,f30_composition_multimodal,Original PSO,8.5,0,7,1
+300,f30_composition_multimodal,PSO-m,7.0,2,6,0
+300,f30_composition_multimodal,PSO-RIW,8.5,0,7,1
+300,f30_composition_multimodal,HPPSO,5.0,4,4,0
+300,f30_composition_multimodal,GA-MPC,3.0,6,2,0
+300,f30_composition_multimodal,GWO,4.0,5,3,0
+300,f30_composition_multimodal,SHADE,2.0,7,1,0
+300,f30_composition_multimodal,CSA,6.0,3,5,0
+300,f30_composition_multimodal,Sep-CMA-ES,1.0,8,0,0
+600,f1_sphere,Original PSO,5.0,4,4,0
+600,f1_sphere,PSO-m,8.0,1,7,0
+600,f1_sphere,PSO-RIW,6.0,3,5,0
+600,f1_sphere,HPPSO,2.0,7,1,0
+600,f1_sphere,GA-MPC,4.0,5,3,0
+600,f1_sphere,GWO,9.0,0,8,0
+600,f1_sphere,SHADE,3.0,6,2,0
+600,f1_sphere,CSA,7.0,2,6,0
+600,f1_sphere,Sep-CMA-ES,1.0,8,0,0
+600,f2_schwefel_2_22,Original PSO,5.0,4,4,0
+600,f2_schwefel_2_22,PSO-m,8.0,1,7,0
+600,f2_schwefel_2_22,PSO-RIW,6.0,3,5,0
+600,f2_schwefel_2_22,HPPSO,2.0,7,1,0
+600,f2_schwefel_2_22,GA-MPC,4.0,5,3,0
+600,f2_schwefel_2_22,GWO,9.0,0,8,0
+600,f2_schwefel_2_22,SHADE,3.0,6,2,0
+600,f2_schwefel_2_22,CSA,7.0,2,6,0
+600,f2_schwefel_2_22,Sep-CMA-ES,1.0,8,0,0
+600,f3_zakharov,Original PSO,4.5,3,2,3
+600,f3_zakharov,PSO-m,4.5,3,2,3
+600,f3_zakharov,PSO-RIW,4.5,3,2,3
+600,f3_zakharov,HPPSO,1.5,7,0,1
+600,f3_zakharov,GA-MPC,8.0,0,6,2
+600,f3_zakharov,GWO,8.0,0,6,2
+600,f3_zakharov,SHADE,1.5,7,0,1
+600,f3_zakharov,CSA,8.0,0,6,2
+600,f3_zakharov,Sep-CMA-ES,4.5,3,2,3
+600,f4_rosenbrock,Original PSO,5.0,4,4,0
+600,f4_rosenbrock,PSO-m,8.0,1,7,0
+600,f4_rosenbrock,PSO-RIW,6.0,3,5,0
+600,f4_rosenbrock,HPPSO,2.0,7,1,0
+600,f4_rosenbrock,GA-MPC,4.0,5,3,0
+600,f4_rosenbrock,GWO,9.0,0,8,0
+600,f4_rosenbrock,SHADE,3.0,6,2,0
+600,f4_rosenbrock,CSA,7.0,2,6,0
+600,f4_rosenbrock,Sep-CMA-ES,1.0,8,0,0
+600,f5_powell_sum,Original PSO,4.0,5,3,0
+600,f5_powell_sum,PSO-m,7.5,1,6,1
+600,f5_powell_sum,PSO-RIW,5.0,4,4,0
+600,f5_powell_sum,HPPSO,6.0,3,5,0
+600,f5_powell_sum,GA-MPC,3.0,6,2,0
+600,f5_powell_sum,GWO,9.0,0,8,0
+600,f5_powell_sum,SHADE,2.0,7,1,0
+600,f5_powell_sum,CSA,7.5,1,6,1
+600,f5_powell_sum,Sep-CMA-ES,1.0,8,0,0
+600,f6_rastrigin,Original PSO,5.0,4,4,0
+600,f6_rastrigin,PSO-m,8.0,1,7,0
+600,f6_rastrigin,PSO-RIW,6.0,3,5,0
+600,f6_rastrigin,HPPSO,2.0,7,1,0
+600,f6_rastrigin,GA-MPC,4.0,5,3,0
+600,f6_rastrigin,GWO,9.0,0,8,0
+600,f6_rastrigin,SHADE,3.0,6,2,0
+600,f6_rastrigin,CSA,7.0,2,6,0
+600,f6_rastrigin,Sep-CMA-ES,1.0,8,0,0
+600,f7_ackley,Original PSO,5.0,4,4,0
+600,f7_ackley,PSO-m,7.5,1,6,1
+600,f7_ackley,PSO-RIW,6.0,3,5,0
+600,f7_ackley,HPPSO,4.0,5,3,0
+600,f7_ackley,GA-MPC,3.0,6,2,0
+600,f7_ackley,GWO,9.0,0,8,0
+600,f7_ackley,SHADE,2.0,7,1,0
+600,f7_ackley,CSA,7.5,1,6,1
+600,f7_ackley,Sep-CMA-ES,1.0,8,0,0
+600,f8_griewank,Original PSO,5.0,4,4,0
+600,f8_griewank,PSO-m,8.0,1,7,0
+600,f8_griewank,PSO-RIW,6.0,3,5,0
+600,f8_griewank,HPPSO,2.0,7,1,0
+600,f8_griewank,GA-MPC,4.0,5,3,0
+600,f8_griewank,GWO,9.0,0,8,0
+600,f8_griewank,SHADE,3.0,6,2,0
+600,f8_griewank,CSA,7.0,2,6,0
+600,f8_griewank,Sep-CMA-ES,1.0,8,0,0
+600,f9_weierstrass,Original PSO,5.0,4,4,0
+600,f9_weierstrass,PSO-m,8.0,1,7,0
+600,f9_weierstrass,PSO-RIW,6.0,3,5,0
+600,f9_weierstrass,HPPSO,4.0,5,3,0
+600,f9_weierstrass,GA-MPC,3.0,6,2,0
+600,f9_weierstrass,GWO,9.0,0,8,0
+600,f9_weierstrass,SHADE,2.0,7,1,0
+600,f9_weierstrass,CSA,7.0,2,6,0
+600,f9_weierstrass,Sep-CMA-ES,1.0,8,0,0
+600,f10_levy,Original PSO,6.0,2,4,2
+600,f10_levy,PSO-m,8.0,1,7,0
+600,f10_levy,PSO-RIW,6.0,2,4,2
+600,f10_levy,HPPSO,3.0,6,2,0
+600,f10_levy,GA-MPC,4.0,5,3,0
+600,f10_levy,GWO,9.0,0,8,0
+600,f10_levy,SHADE,2.0,7,1,0
+600,f10_levy,CSA,6.0,2,4,2
+600,f10_levy,Sep-CMA-ES,1.0,8,0,0
+600,f11_schwefel_2_26,Original PSO,4.0,5,3,0
+600,f11_schwefel_2_26,PSO-m,6.5,1,5,2
+600,f11_schwefel_2_26,PSO-RIW,5.0,4,4,0
+600,f11_schwefel_2_26,HPPSO,2.0,6,0,2
+600,f11_schwefel_2_26,GA-MPC,6.5,1,5,2
+600,f11_schwefel_2_26,GWO,8.0,0,5,3
+600,f11_schwefel_2_26,SHADE,3.0,6,1,1
+600,f11_schwefel_2_26,CSA,9.0,0,7,1
+600,f11_schwefel_2_26,Sep-CMA-ES,1.0,7,0,1
+600,f12_styblinski_tang,Original PSO,4.5,4,3,1
+600,f12_styblinski_tang,PSO-m,7.5,1,6,1
+600,f12_styblinski_tang,PSO-RIW,4.5,4,3,1
+600,f12_styblinski_tang,HPPSO,3.0,6,2,0
+600,f12_styblinski_tang,GA-MPC,7.5,1,6,1
+600,f12_styblinski_tang,GWO,9.0,0,8,0
+600,f12_styblinski_tang,SHADE,2.0,7,1,0
+600,f12_styblinski_tang,CSA,6.0,3,5,0
+600,f12_styblinski_tang,Sep-CMA-ES,1.0,8,0,0
+600,f13_michalewicz,Original PSO,4.0,4,3,1
+600,f13_michalewicz,PSO-m,8.0,1,7,0
+600,f13_michalewicz,PSO-RIW,6.0,3,4,1
+600,f13_michalewicz,HPPSO,1.0,8,0,0
+600,f13_michalewicz,GA-MPC,3.0,6,2,0
+600,f13_michalewicz,GWO,9.0,0,8,0
+600,f13_michalewicz,SHADE,2.0,7,1,0
+600,f13_michalewicz,CSA,5.0,3,3,2
+600,f13_michalewicz,Sep-CMA-ES,7.0,2,6,0
+600,f14_alpine_1,Original PSO,5.0,4,4,0
+600,f14_alpine_1,PSO-m,7.5,1,6,1
+600,f14_alpine_1,PSO-RIW,6.0,3,5,0
+600,f14_alpine_1,HPPSO,3.0,6,2,0
+600,f14_alpine_1,GA-MPC,4.0,5,3,0
+600,f14_alpine_1,GWO,9.0,0,8,0
+600,f14_alpine_1,SHADE,2.0,7,1,0
+600,f14_alpine_1,CSA,7.5,1,6,1
+600,f14_alpine_1,Sep-CMA-ES,1.0,8,0,0
+600,f15_happy_cat,Original PSO,5.5,3,4,1
+600,f15_happy_cat,PSO-m,7.5,1,6,1
+600,f15_happy_cat,PSO-RIW,5.5,3,4,1
+600,f15_happy_cat,HPPSO,2.0,7,1,0
+600,f15_happy_cat,GA-MPC,4.0,5,3,0
+600,f15_happy_cat,GWO,9.0,0,8,0
+600,f15_happy_cat,SHADE,3.0,6,2,0
+600,f15_happy_cat,CSA,7.5,1,6,1
+600,f15_happy_cat,Sep-CMA-ES,1.0,8,0,0
+600,f16_hgbat,Original PSO,5.0,4,4,0
+600,f16_hgbat,PSO-m,7.5,1,6,1
+600,f16_hgbat,PSO-RIW,6.0,3,5,0
+600,f16_hgbat,HPPSO,1.0,7,0,1
+600,f16_hgbat,GA-MPC,4.0,5,3,0
+600,f16_hgbat,GWO,9.0,0,8,0
+600,f16_hgbat,SHADE,3.0,6,1,1
+600,f16_hgbat,CSA,7.5,1,6,1
+600,f16_hgbat,Sep-CMA-ES,2.0,6,0,2
+600,f17_bent_cigar,Original PSO,5.0,4,4,0
+600,f17_bent_cigar,PSO-m,8.0,1,7,0
+600,f17_bent_cigar,PSO-RIW,6.0,3,5,0
+600,f17_bent_cigar,HPPSO,2.0,7,1,0
+600,f17_bent_cigar,GA-MPC,4.0,5,3,0
+600,f17_bent_cigar,GWO,9.0,0,8,0
+600,f17_bent_cigar,SHADE,3.0,6,2,0
+600,f17_bent_cigar,CSA,7.0,2,6,0
+600,f17_bent_cigar,Sep-CMA-ES,1.0,8,0,0
+600,f18_discus,Original PSO,5.0,3,3,2
+600,f18_discus,PSO-m,7.0,2,6,0
+600,f18_discus,PSO-RIW,5.0,3,3,2
+600,f18_discus,HPPSO,2.0,7,1,0
+600,f18_discus,GA-MPC,5.0,3,3,2
+600,f18_discus,GWO,9.0,0,8,0
+600,f18_discus,SHADE,3.0,6,2,0
+600,f18_discus,CSA,8.0,1,7,0
+600,f18_discus,Sep-CMA-ES,1.0,8,0,0
+600,f19_penalized_1,Original PSO,5.5,3,4,1
+600,f19_penalized_1,PSO-m,7.5,1,6,1
+600,f19_penalized_1,PSO-RIW,5.5,3,4,1
+600,f19_penalized_1,HPPSO,3.0,6,2,0
+600,f19_penalized_1,GA-MPC,4.0,5,3,0
+600,f19_penalized_1,GWO,9.0,0,8,0
+600,f19_penalized_1,SHADE,2.0,7,1,0
+600,f19_penalized_1,CSA,7.5,1,6,1
+600,f19_penalized_1,Sep-CMA-ES,1.0,8,0,0
+600,f20_zakharov_2,Original PSO,6.5,2,5,1
+600,f20_zakharov_2,PSO-m,9.0,0,8,0
+600,f20_zakharov_2,PSO-RIW,6.5,2,5,1
+600,f20_zakharov_2,HPPSO,2.0,7,1,0
+600,f20_zakharov_2,GA-MPC,4.0,5,3,0
+600,f20_zakharov_2,GWO,8.0,1,7,0
+600,f20_zakharov_2,SHADE,3.0,6,2,0
+600,f20_zakharov_2,CSA,5.0,4,4,0
+600,f20_zakharov_2,Sep-CMA-ES,1.0,8,0,0
+600,f21_expanded_schaffer_f6,Original PSO,3.0,6,2,0
+600,f21_expanded_schaffer_f6,PSO-m,6.5,1,4,3
+600,f21_expanded_schaffer_f6,PSO-RIW,4.0,4,3,1
+600,f21_expanded_schaffer_f6,HPPSO,1.0,8,0,0
+600,f21_expanded_schaffer_f6,GA-MPC,6.5,1,4,3
+600,f21_expanded_schaffer_f6,GWO,8.0,0,4,4
+600,f21_expanded_schaffer_f6,SHADE,2.0,7,1,0
+600,f21_expanded_schaffer_f6,CSA,5.0,1,3,4
+600,f21_expanded_schaffer_f6,Sep-CMA-ES,9.0,0,7,1
+600,f22_rotated_ellipsoid,Original PSO,5.0,4,4,0
+600,f22_rotated_ellipsoid,PSO-m,7.5,1,6,1
+600,f22_rotated_ellipsoid,PSO-RIW,6.0,3,5,0
+600,f22_rotated_ellipsoid,HPPSO,1.0,8,0,0
+600,f22_rotated_ellipsoid,GA-MPC,4.0,5,3,0
+600,f22_rotated_ellipsoid,GWO,9.0,0,8,0
+600,f22_rotated_ellipsoid,SHADE,2.5,6,1,1
+600,f22_rotated_ellipsoid,CSA,7.5,1,6,1
+600,f22_rotated_ellipsoid,Sep-CMA-ES,2.5,6,1,1
+600,f23_rotated_rastrigin,Original PSO,8.0,0,6,2
+600,f23_rotated_rastrigin,PSO-m,8.0,0,6,2
+600,f23_rotated_rastrigin,PSO-RIW,8.0,0,6,2
+600,f23_rotated_rastrigin,HPPSO,2.0,7,1,0
+600,f23_rotated_rastrigin,GA-MPC,5.0,3,3,2
+600,f23_rotated_rastrigin,GWO,5.0,3,3,2
+600,f23_rotated_rastrigin,SHADE,3.0,6,2,0
+600,f23_rotated_rastrigin,CSA,5.0,3,3,2
+600,f23_rotated_rastrigin,Sep-CMA-ES,1.0,8,0,0
+600,f24_rotated_ackley,Original PSO,5.0,4,4,0
+600,f24_rotated_ackley,PSO-m,7.5,1,6,1
+600,f24_rotated_ackley,PSO-RIW,6.0,3,5,0
+600,f24_rotated_ackley,HPPSO,4.0,5,3,0
+600,f24_rotated_ackley,GA-MPC,3.0,6,2,0
+600,f24_rotated_ackley,GWO,9.0,0,8,0
+600,f24_rotated_ackley,SHADE,2.0,7,1,0
+600,f24_rotated_ackley,CSA,7.5,1,6,1
+600,f24_rotated_ackley,Sep-CMA-ES,1.0,8,0,0
+600,f25_composition,Original PSO,5.0,4,4,0
+600,f25_composition,PSO-m,7.0,1,6,1
+600,f25_composition,PSO-RIW,6.0,3,5,0
+600,f25_composition,HPPSO,1.0,8,0,0
+600,f25_composition,GA-MPC,4.0,5,3,0
+600,f25_composition,GWO,9.0,0,7,1
+600,f25_composition,SHADE,2.0,7,1,0
+600,f25_composition,CSA,8.0,0,6,2
+600,f25_composition,Sep-CMA-ES,3.0,6,2,0
+600,f26_rotated_griewank,Original PSO,5.0,4,4,0
+600,f26_rotated_griewank,PSO-m,8.0,1,7,0
+600,f26_rotated_griewank,PSO-RIW,6.0,3,5,0
+600,f26_rotated_griewank,HPPSO,2.0,7,1,0
+600,f26_rotated_griewank,GA-MPC,4.0,5,3,0
+600,f26_rotated_griewank,GWO,9.0,0,8,0
+600,f26_rotated_griewank,SHADE,3.0,6,2,0
+600,f26_rotated_griewank,CSA,7.0,2,6,0
+600,f26_rotated_griewank,Sep-CMA-ES,1.0,8,0,0
+600,f27_rotated_discus,Original PSO,3.5,4,2,2
+600,f27_rotated_discus,PSO-m,6.0,3,4,1
+600,f27_rotated_discus,PSO-RIW,3.5,4,2,2
+600,f27_rotated_discus,HPPSO,2.0,7,1,0
+600,f27_rotated_discus,GA-MPC,7.5,1,6,1
+600,f27_rotated_discus,GWO,9.0,0,8,0
+600,f27_rotated_discus,SHADE,1.0,8,0,0
+600,f27_rotated_discus,CSA,5.0,3,2,3
+600,f27_rotated_discus,Sep-CMA-ES,7.5,1,6,1
+600,f28_schwefel_1_2,Original PSO,5.5,3,4,1
+600,f28_schwefel_1_2,PSO-m,7.5,1,6,1
+600,f28_schwefel_1_2,PSO-RIW,5.5,3,4,1
+600,f28_schwefel_1_2,HPPSO,2.0,7,1,0
+600,f28_schwefel_1_2,GA-MPC,9.0,0,8,0
+600,f28_schwefel_1_2,GWO,4.0,5,3,0
+600,f28_schwefel_1_2,SHADE,1.0,8,0,0
+600,f28_schwefel_1_2,CSA,7.5,1,6,1
+600,f28_schwefel_1_2,Sep-CMA-ES,3.0,6,2,0
+600,f29_rotated_schaffer_f7,Original PSO,7.0,0,4,4
+600,f29_rotated_schaffer_f7,PSO-m,7.0,0,4,4
+600,f29_rotated_schaffer_f7,PSO-RIW,7.0,0,4,4
+600,f29_rotated_schaffer_f7,HPPSO,3.0,6,2,0
+600,f29_rotated_schaffer_f7,GA-MPC,4.0,5,3,0
+600,f29_rotated_schaffer_f7,GWO,7.0,0,4,4
+600,f29_rotated_schaffer_f7,SHADE,2.0,7,1,0
+600,f29_rotated_schaffer_f7,CSA,7.0,0,4,4
+600,f29_rotated_schaffer_f7,Sep-CMA-ES,1.0,8,0,0
+600,f30_composition_multimodal,Original PSO,8.5,0,7,1
+600,f30_composition_multimodal,PSO-m,7.0,2,6,0
+600,f30_composition_multimodal,PSO-RIW,8.5,0,7,1
+600,f30_composition_multimodal,HPPSO,4.0,5,3,0
+600,f30_composition_multimodal,GA-MPC,3.0,6,2,0
+600,f30_composition_multimodal,GWO,5.5,3,4,1
+600,f30_composition_multimodal,SHADE,2.0,7,1,0
+600,f30_composition_multimodal,CSA,5.5,3,4,1
+600,f30_composition_multimodal,Sep-CMA-ES,1.0,8,0,0
+1000,f1_sphere,Original PSO,5.0,3,4,1
+1000,f1_sphere,PSO-m,8.0,1,7,0
+1000,f1_sphere,PSO-RIW,7.0,2,5,1
+1000,f1_sphere,HPPSO,2.0,7,1,0
+1000,f1_sphere,GA-MPC,4.0,5,3,0
+1000,f1_sphere,GWO,9.0,0,8,0
+1000,f1_sphere,SHADE,3.0,6,2,0
+1000,f1_sphere,CSA,6.0,2,4,2
+1000,f1_sphere,Sep-CMA-ES,1.0,8,0,0
+1000,f2_schwefel_2_22,Original PSO,5.0,3,4,1
+1000,f2_schwefel_2_22,PSO-m,8.0,1,7,0
+1000,f2_schwefel_2_22,PSO-RIW,7.0,2,5,1
+1000,f2_schwefel_2_22,HPPSO,2.0,7,1,0
+1000,f2_schwefel_2_22,GA-MPC,4.0,5,3,0
+1000,f2_schwefel_2_22,GWO,9.0,0,8,0
+1000,f2_schwefel_2_22,SHADE,3.0,6,2,0
+1000,f2_schwefel_2_22,CSA,6.0,2,4,2
+1000,f2_schwefel_2_22,Sep-CMA-ES,1.0,8,0,0
+1000,f3_zakharov,Original PSO,4.0,4,3,1
+1000,f3_zakharov,PSO-m,6.0,3,4,1
+1000,f3_zakharov,PSO-RIW,5.0,3,3,2
+1000,f3_zakharov,HPPSO,1.5,7,0,1
+1000,f3_zakharov,GA-MPC,8.0,1,7,0
+1000,f3_zakharov,GWO,7.0,2,6,0
+1000,f3_zakharov,SHADE,1.5,7,0,1
+1000,f3_zakharov,CSA,9.0,0,8,0
+1000,f3_zakharov,Sep-CMA-ES,3.0,6,2,0
+1000,f4_rosenbrock,Original PSO,5.0,3,4,1
+1000,f4_rosenbrock,PSO-m,8.0,1,7,0
+1000,f4_rosenbrock,PSO-RIW,7.0,2,5,1
+1000,f4_rosenbrock,HPPSO,2.0,7,1,0
+1000,f4_rosenbrock,GA-MPC,4.0,5,3,0
+1000,f4_rosenbrock,GWO,9.0,0,8,0
+1000,f4_rosenbrock,SHADE,3.0,6,2,0
+1000,f4_rosenbrock,CSA,6.0,2,4,2
+1000,f4_rosenbrock,Sep-CMA-ES,1.0,8,0,0
+1000,f5_powell_sum,Original PSO,5.0,4,4,0
+1000,f5_powell_sum,PSO-m,8.0,1,7,0
+1000,f5_powell_sum,PSO-RIW,6.0,3,5,0
+1000,f5_powell_sum,HPPSO,4.0,5,3,0
+1000,f5_powell_sum,GA-MPC,3.0,6,2,0
+1000,f5_powell_sum,GWO,9.0,0,8,0
+1000,f5_powell_sum,SHADE,2.0,7,1,0
+1000,f5_powell_sum,CSA,7.0,2,6,0
+1000,f5_powell_sum,Sep-CMA-ES,1.0,8,0,0
+1000,f6_rastrigin,Original PSO,5.0,4,4,0
+1000,f6_rastrigin,PSO-m,8.0,1,7,0
+1000,f6_rastrigin,PSO-RIW,6.0,3,5,0
+1000,f6_rastrigin,HPPSO,3.0,6,1,1
+1000,f6_rastrigin,GA-MPC,4.0,5,3,0
+1000,f6_rastrigin,GWO,9.0,0,8,0
+1000,f6_rastrigin,SHADE,2.0,6,0,2
+1000,f6_rastrigin,CSA,7.0,2,6,0
+1000,f6_rastrigin,Sep-CMA-ES,1.0,7,0,1
+1000,f7_ackley,Original PSO,5.0,3,4,1
+1000,f7_ackley,PSO-m,8.0,1,7,0
+1000,f7_ackley,PSO-RIW,7.0,2,5,1
+1000,f7_ackley,HPPSO,3.0,6,2,0
+1000,f7_ackley,GA-MPC,4.0,5,3,0
+1000,f7_ackley,GWO,9.0,0,8,0
+1000,f7_ackley,SHADE,2.0,7,1,0
+1000,f7_ackley,CSA,6.0,2,4,2
+1000,f7_ackley,Sep-CMA-ES,1.0,8,0,0
+1000,f8_griewank,Original PSO,6.0,2,4,2
+1000,f8_griewank,PSO-m,8.0,1,7,0
+1000,f8_griewank,PSO-RIW,6.0,2,4,2
+1000,f8_griewank,HPPSO,2.0,7,1,0
+1000,f8_griewank,GA-MPC,4.0,5,3,0
+1000,f8_griewank,GWO,9.0,0,8,0
+1000,f8_griewank,SHADE,3.0,6,2,0
+1000,f8_griewank,CSA,6.0,2,4,2
+1000,f8_griewank,Sep-CMA-ES,1.0,8,0,0
+1000,f9_weierstrass,Original PSO,5.0,3,4,1
+1000,f9_weierstrass,PSO-m,8.0,1,7,0
+1000,f9_weierstrass,PSO-RIW,7.0,2,5,1
+1000,f9_weierstrass,HPPSO,4.0,5,3,0
+1000,f9_weierstrass,GA-MPC,3.0,6,2,0
+1000,f9_weierstrass,GWO,9.0,0,8,0
+1000,f9_weierstrass,SHADE,2.0,7,1,0
+1000,f9_weierstrass,CSA,6.0,2,4,2
+1000,f9_weierstrass,Sep-CMA-ES,1.0,8,0,0
+1000,f10_levy,Original PSO,6.0,2,4,2
+1000,f10_levy,PSO-m,8.0,1,7,0
+1000,f10_levy,PSO-RIW,6.0,2,4,2
+1000,f10_levy,HPPSO,3.0,6,2,0
+1000,f10_levy,GA-MPC,4.0,5,3,0
+1000,f10_levy,GWO,9.0,0,8,0
+1000,f10_levy,SHADE,2.0,7,1,0
+1000,f10_levy,CSA,6.0,2,4,2
+1000,f10_levy,Sep-CMA-ES,1.0,8,0,0
+1000,f11_schwefel_2_26,Original PSO,4.0,5,3,0
+1000,f11_schwefel_2_26,PSO-m,6.5,1,5,2
+1000,f11_schwefel_2_26,PSO-RIW,5.0,4,4,0
+1000,f11_schwefel_2_26,HPPSO,1.5,7,0,1
+1000,f11_schwefel_2_26,GA-MPC,9.0,0,7,1
+1000,f11_schwefel_2_26,GWO,6.5,1,5,2
+1000,f11_schwefel_2_26,SHADE,3.0,6,2,0
+1000,f11_schwefel_2_26,CSA,8.0,0,5,3
+1000,f11_schwefel_2_26,Sep-CMA-ES,1.5,7,0,1
+1000,f12_styblinski_tang,Original PSO,3.0,4,2,2
+1000,f12_styblinski_tang,PSO-m,7.0,2,6,0
+1000,f12_styblinski_tang,PSO-RIW,6.0,3,3,2
+1000,f12_styblinski_tang,HPPSO,2.0,7,1,0
+1000,f12_styblinski_tang,GA-MPC,9.0,0,8,0
+1000,f12_styblinski_tang,GWO,8.0,1,7,0
+1000,f12_styblinski_tang,SHADE,4.5,3,2,3
+1000,f12_styblinski_tang,CSA,4.5,3,2,3
+1000,f12_styblinski_tang,Sep-CMA-ES,1.0,8,0,0
+1000,f13_michalewicz,Original PSO,5.0,4,3,1
+1000,f13_michalewicz,PSO-m,8.0,1,7,0
+1000,f13_michalewicz,PSO-RIW,6.0,3,5,0
+1000,f13_michalewicz,HPPSO,1.0,8,0,0
+1000,f13_michalewicz,GA-MPC,3.0,5,2,1
+1000,f13_michalewicz,GWO,9.0,0,8,0
+1000,f13_michalewicz,SHADE,2.0,7,1,0
+1000,f13_michalewicz,CSA,4.0,4,2,2
+1000,f13_michalewicz,Sep-CMA-ES,7.0,2,6,0
+1000,f14_alpine_1,Original PSO,5.0,4,4,0
+1000,f14_alpine_1,PSO-m,7.5,1,6,1
+1000,f14_alpine_1,PSO-RIW,6.0,3,5,0
+1000,f14_alpine_1,HPPSO,3.0,6,2,0
+1000,f14_alpine_1,GA-MPC,4.0,5,3,0
+1000,f14_alpine_1,GWO,9.0,0,8,0
+1000,f14_alpine_1,SHADE,2.0,7,1,0
+1000,f14_alpine_1,CSA,7.5,1,6,1
+1000,f14_alpine_1,Sep-CMA-ES,1.0,8,0,0
+1000,f15_happy_cat,Original PSO,6.0,2,4,2
+1000,f15_happy_cat,PSO-m,8.0,1,7,0
+1000,f15_happy_cat,PSO-RIW,6.0,2,4,2
+1000,f15_happy_cat,HPPSO,2.5,6,1,1
+1000,f15_happy_cat,GA-MPC,4.0,5,3,0
+1000,f15_happy_cat,GWO,9.0,0,8,0
+1000,f15_happy_cat,SHADE,2.5,6,1,1
+1000,f15_happy_cat,CSA,6.0,2,4,2
+1000,f15_happy_cat,Sep-CMA-ES,1.0,8,0,0
+1000,f16_hgbat,Original PSO,5.0,3,4,1
+1000,f16_hgbat,PSO-m,8.0,1,7,0
+1000,f16_hgbat,PSO-RIW,7.0,2,5,1
+1000,f16_hgbat,HPPSO,1.5,7,0,1
+1000,f16_hgbat,GA-MPC,4.0,5,3,0
+1000,f16_hgbat,GWO,9.0,0,8,0
+1000,f16_hgbat,SHADE,3.0,6,2,0
+1000,f16_hgbat,CSA,6.0,2,4,2
+1000,f16_hgbat,Sep-CMA-ES,1.5,7,0,1
+1000,f17_bent_cigar,Original PSO,5.0,3,4,1
+1000,f17_bent_cigar,PSO-m,8.0,1,7,0
+1000,f17_bent_cigar,PSO-RIW,7.0,2,5,1
+1000,f17_bent_cigar,HPPSO,2.0,7,1,0
+1000,f17_bent_cigar,GA-MPC,4.0,5,3,0
+1000,f17_bent_cigar,GWO,9.0,0,8,0
+1000,f17_bent_cigar,SHADE,3.0,6,2,0
+1000,f17_bent_cigar,CSA,6.0,2,4,2
+1000,f17_bent_cigar,Sep-CMA-ES,1.0,8,0,0
+1000,f18_discus,Original PSO,5.5,3,4,1
+1000,f18_discus,PSO-m,7.5,1,6,1
+1000,f18_discus,PSO-RIW,5.5,3,4,1
+1000,f18_discus,HPPSO,2.0,7,1,0
+1000,f18_discus,GA-MPC,4.0,5,3,0
+1000,f18_discus,GWO,9.0,0,8,0
+1000,f18_discus,SHADE,3.0,6,2,0
+1000,f18_discus,CSA,7.5,1,6,1
+1000,f18_discus,Sep-CMA-ES,1.0,8,0,0
+1000,f19_penalized_1,Original PSO,6.0,2,4,2
+1000,f19_penalized_1,PSO-m,8.0,1,7,0
+1000,f19_penalized_1,PSO-RIW,6.0,2,4,2
+1000,f19_penalized_1,HPPSO,3.0,6,2,0
+1000,f19_penalized_1,GA-MPC,4.0,5,3,0
+1000,f19_penalized_1,GWO,9.0,0,8,0
+1000,f19_penalized_1,SHADE,2.0,7,1,0
+1000,f19_penalized_1,CSA,6.0,2,4,2
+1000,f19_penalized_1,Sep-CMA-ES,1.0,8,0,0
+1000,f20_zakharov_2,Original PSO,6.0,3,5,0
+1000,f20_zakharov_2,PSO-m,9.0,0,8,0
+1000,f20_zakharov_2,PSO-RIW,7.0,2,6,0
+1000,f20_zakharov_2,HPPSO,1.5,7,0,1
+1000,f20_zakharov_2,GA-MPC,4.0,5,3,0
+1000,f20_zakharov_2,GWO,8.0,1,7,0
+1000,f20_zakharov_2,SHADE,3.0,6,2,0
+1000,f20_zakharov_2,CSA,5.0,4,4,0
+1000,f20_zakharov_2,Sep-CMA-ES,1.5,7,0,1
+1000,f21_expanded_schaffer_f6,Original PSO,3.0,5,2,1
+1000,f21_expanded_schaffer_f6,PSO-m,6.0,3,5,0
+1000,f21_expanded_schaffer_f6,PSO-RIW,4.0,4,2,2
+1000,f21_expanded_schaffer_f6,HPPSO,1.0,8,0,0
+1000,f21_expanded_schaffer_f6,GA-MPC,7.5,1,6,1
+1000,f21_expanded_schaffer_f6,GWO,9.0,0,8,0
+1000,f21_expanded_schaffer_f6,SHADE,2.0,7,1,0
+1000,f21_expanded_schaffer_f6,CSA,5.0,4,3,1
+1000,f21_expanded_schaffer_f6,Sep-CMA-ES,7.5,1,6,1
+1000,f22_rotated_ellipsoid,Original PSO,5.5,3,4,1
+1000,f22_rotated_ellipsoid,PSO-m,7.5,1,6,1
+1000,f22_rotated_ellipsoid,PSO-RIW,5.5,3,4,1
+1000,f22_rotated_ellipsoid,HPPSO,2.5,6,1,1
+1000,f22_rotated_ellipsoid,GA-MPC,4.0,5,3,0
+1000,f22_rotated_ellipsoid,GWO,9.0,0,8,0
+1000,f22_rotated_ellipsoid,SHADE,1.0,8,0,0
+1000,f22_rotated_ellipsoid,CSA,7.5,1,6,1
+1000,f22_rotated_ellipsoid,Sep-CMA-ES,2.5,6,1,1
+1000,f23_rotated_rastrigin,Original PSO,7.0,0,5,3
+1000,f23_rotated_rastrigin,PSO-m,8.5,0,6,2
+1000,f23_rotated_rastrigin,PSO-RIW,8.5,0,6,2
+1000,f23_rotated_rastrigin,HPPSO,3.0,6,1,1
+1000,f23_rotated_rastrigin,GA-MPC,4.5,3,3,2
+1000,f23_rotated_rastrigin,GWO,4.5,3,3,2
+1000,f23_rotated_rastrigin,SHADE,2.0,6,0,2
+1000,f23_rotated_rastrigin,CSA,6.0,2,3,3
+1000,f23_rotated_rastrigin,Sep-CMA-ES,1.0,7,0,1
+1000,f24_rotated_ackley,Original PSO,6.0,2,4,2
+1000,f24_rotated_ackley,PSO-m,8.0,1,7,0
+1000,f24_rotated_ackley,PSO-RIW,6.0,2,4,2
+1000,f24_rotated_ackley,HPPSO,3.0,6,2,0
+1000,f24_rotated_ackley,GA-MPC,4.0,5,3,0
+1000,f24_rotated_ackley,GWO,9.0,0,8,0
+1000,f24_rotated_ackley,SHADE,2.0,7,1,0
+1000,f24_rotated_ackley,CSA,6.0,2,4,2
+1000,f24_rotated_ackley,Sep-CMA-ES,1.0,8,0,0
+1000,f25_composition,Original PSO,5.5,3,4,1
+1000,f25_composition,PSO-m,7.5,1,6,1
+1000,f25_composition,PSO-RIW,5.5,3,4,1
+1000,f25_composition,HPPSO,2.0,7,1,0
+1000,f25_composition,GA-MPC,4.0,5,3,0
+1000,f25_composition,GWO,9.0,0,8,0
+1000,f25_composition,SHADE,1.0,7,0,1
+1000,f25_composition,CSA,7.5,1,6,1
+1000,f25_composition,Sep-CMA-ES,3.0,6,1,1
+1000,f26_rotated_griewank,Original PSO,6.0,2,4,2
+1000,f26_rotated_griewank,PSO-m,8.0,1,7,0
+1000,f26_rotated_griewank,PSO-RIW,6.0,2,4,2
+1000,f26_rotated_griewank,HPPSO,2.0,7,1,0
+1000,f26_rotated_griewank,GA-MPC,4.0,5,3,0
+1000,f26_rotated_griewank,GWO,9.0,0,8,0
+1000,f26_rotated_griewank,SHADE,3.0,6,2,0
+1000,f26_rotated_griewank,CSA,6.0,2,4,2
+1000,f26_rotated_griewank,Sep-CMA-ES,1.0,8,0,0
+1000,f27_rotated_discus,Original PSO,3.5,4,2,2
+1000,f27_rotated_discus,PSO-m,6.0,3,4,1
+1000,f27_rotated_discus,PSO-RIW,3.5,4,2,2
+1000,f27_rotated_discus,HPPSO,2.0,7,1,0
+1000,f27_rotated_discus,GA-MPC,8.0,1,7,0
+1000,f27_rotated_discus,GWO,9.0,0,8,0
+1000,f27_rotated_discus,SHADE,1.0,8,0,0
+1000,f27_rotated_discus,CSA,5.0,3,2,3
+1000,f27_rotated_discus,Sep-CMA-ES,7.0,2,6,0
+1000,f28_schwefel_1_2,Original PSO,5.5,3,4,1
+1000,f28_schwefel_1_2,PSO-m,7.5,1,6,1
+1000,f28_schwefel_1_2,PSO-RIW,5.5,3,4,1
+1000,f28_schwefel_1_2,HPPSO,2.0,7,1,0
+1000,f28_schwefel_1_2,GA-MPC,9.0,0,8,0
+1000,f28_schwefel_1_2,GWO,4.0,5,3,0
+1000,f28_schwefel_1_2,SHADE,1.0,8,0,0
+1000,f28_schwefel_1_2,CSA,7.5,1,6,1
+1000,f28_schwefel_1_2,Sep-CMA-ES,3.0,6,2,0
+1000,f29_rotated_schaffer_f7,Original PSO,7.0,0,4,4
+1000,f29_rotated_schaffer_f7,PSO-m,7.0,0,4,4
+1000,f29_rotated_schaffer_f7,PSO-RIW,7.0,0,4,4
+1000,f29_rotated_schaffer_f7,HPPSO,3.0,6,2,0
+1000,f29_rotated_schaffer_f7,GA-MPC,4.0,5,3,0
+1000,f29_rotated_schaffer_f7,GWO,7.0,0,4,4
+1000,f29_rotated_schaffer_f7,SHADE,2.0,7,1,0
+1000,f29_rotated_schaffer_f7,CSA,7.0,0,4,4
+1000,f29_rotated_schaffer_f7,Sep-CMA-ES,1.0,8,0,0
+1000,f30_composition_multimodal,Original PSO,8.5,0,7,1
+1000,f30_composition_multimodal,PSO-m,7.0,2,6,0
+1000,f30_composition_multimodal,PSO-RIW,8.5,0,7,1
+1000,f30_composition_multimodal,HPPSO,2.0,7,1,0
+1000,f30_composition_multimodal,GA-MPC,3.0,6,2,0
+1000,f30_composition_multimodal,GWO,6.0,3,5,0
+1000,f30_composition_multimodal,SHADE,4.0,5,3,0
+1000,f30_composition_multimodal,CSA,5.0,4,4,0
+1000,f30_composition_multimodal,Sep-CMA-ES,1.0,8,0,0

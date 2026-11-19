@@ -1,0 +1,7 @@
+{
+  "expected": 21600,
+  "saved": 21600,
+  "missing": 0,
+  "failed": 0,
+  "note": "Incomplete/failed function blocks excluded from ranks and convergence comparison plots; see summary.csv."
+}

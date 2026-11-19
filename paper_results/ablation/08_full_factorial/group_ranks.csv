@@ -1,0 +1,81 @@
+function,group,variant,label,rank
+f1_sphere,hp_ablation,v_e285890a8de95987,HPPSO,2.0
+f1_sphere,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,5.0
+f1_sphere,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,4.0
+f1_sphere,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,3.0
+f1_sphere,hp_ablation,v_3c201cfab8636926,HPPSO without openness,1.0
+f1_sphere,hp_ablation,v_ee371b261d26fa79,PSO,6.0
+f1_sphere,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f1_sphere,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,7.0
+f10_levy,hp_ablation,v_e285890a8de95987,HPPSO,2.0
+f10_levy,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,1.0
+f10_levy,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,4.0
+f10_levy,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,3.0
+f10_levy,hp_ablation,v_3c201cfab8636926,HPPSO without openness,6.0
+f10_levy,hp_ablation,v_ee371b261d26fa79,PSO,7.0
+f10_levy,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f10_levy,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,5.0
+f13_michalewicz,hp_ablation,v_e285890a8de95987,HPPSO,1.0
+f13_michalewicz,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,4.0
+f13_michalewicz,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,7.0
+f13_michalewicz,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,3.0
+f13_michalewicz,hp_ablation,v_3c201cfab8636926,HPPSO without openness,2.0
+f13_michalewicz,hp_ablation,v_ee371b261d26fa79,PSO,5.0
+f13_michalewicz,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f13_michalewicz,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,6.0
+f26_rotated_griewank,hp_ablation,v_e285890a8de95987,HPPSO,2.0
+f26_rotated_griewank,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,5.0
+f26_rotated_griewank,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,4.0
+f26_rotated_griewank,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,3.0
+f26_rotated_griewank,hp_ablation,v_3c201cfab8636926,HPPSO without openness,1.0
+f26_rotated_griewank,hp_ablation,v_ee371b261d26fa79,PSO,6.0
+f26_rotated_griewank,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f26_rotated_griewank,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,7.0
+f7_ackley,hp_ablation,v_e285890a8de95987,HPPSO,4.0
+f7_ackley,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,6.0
+f7_ackley,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,1.0
+f7_ackley,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,7.0
+f7_ackley,hp_ablation,v_3c201cfab8636926,HPPSO without openness,8.0
+f7_ackley,hp_ablation,v_ee371b261d26fa79,PSO,2.0
+f7_ackley,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,5.0
+f7_ackley,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,3.0
+f22_rotated_ellipsoid,hp_ablation,v_e285890a8de95987,HPPSO,1.0
+f22_rotated_ellipsoid,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,4.0
+f22_rotated_ellipsoid,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,5.0
+f22_rotated_ellipsoid,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,2.0
+f22_rotated_ellipsoid,hp_ablation,v_3c201cfab8636926,HPPSO without openness,3.0
+f22_rotated_ellipsoid,hp_ablation,v_ee371b261d26fa79,PSO,6.0
+f22_rotated_ellipsoid,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f22_rotated_ellipsoid,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,7.0
+f4_rosenbrock,hp_ablation,v_e285890a8de95987,HPPSO,2.0
+f4_rosenbrock,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,4.0
+f4_rosenbrock,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,5.0
+f4_rosenbrock,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,1.0
+f4_rosenbrock,hp_ablation,v_3c201cfab8636926,HPPSO without openness,3.0
+f4_rosenbrock,hp_ablation,v_ee371b261d26fa79,PSO,6.0
+f4_rosenbrock,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f4_rosenbrock,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,7.0
+f25_composition,hp_ablation,v_e285890a8de95987,HPPSO,2.0
+f25_composition,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,4.0
+f25_composition,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,5.0
+f25_composition,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,1.0
+f25_composition,hp_ablation,v_3c201cfab8636926,HPPSO without openness,3.0
+f25_composition,hp_ablation,v_ee371b261d26fa79,PSO,7.0
+f25_composition,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f25_composition,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,6.0
+f28_schwefel_1_2,hp_ablation,v_e285890a8de95987,HPPSO,2.0
+f28_schwefel_1_2,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,4.0
+f28_schwefel_1_2,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,5.0
+f28_schwefel_1_2,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,1.0
+f28_schwefel_1_2,hp_ablation,v_3c201cfab8636926,HPPSO without openness,3.0
+f28_schwefel_1_2,hp_ablation,v_ee371b261d26fa79,PSO,6.0
+f28_schwefel_1_2,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f28_schwefel_1_2,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,7.0
+f29_rotated_schaffer_f7,hp_ablation,v_e285890a8de95987,HPPSO,1.0
+f29_rotated_schaffer_f7,hp_ablation,v_8d07f005a81ba08b,HPPSO without curiosity,3.0
+f29_rotated_schaffer_f7,hp_ablation,v_a2d4ce1b80425c15,HPPSO without conformity,5.0
+f29_rotated_schaffer_f7,hp_ablation,v_eb903a7ce1021189,HPPSO without aggressiveness,2.0
+f29_rotated_schaffer_f7,hp_ablation,v_3c201cfab8636926,HPPSO without openness,4.0
+f29_rotated_schaffer_f7,hp_ablation,v_ee371b261d26fa79,PSO,7.0
+f29_rotated_schaffer_f7,hp_ablation,v_a0b21d5873d7c4ca,PSO-m,8.0
+f29_rotated_schaffer_f7,hp_ablation,v_31ed1a1c9737e0b3,PSO-RIW,6.0

@@ -1,0 +1,500 @@
+{
+  "config": {
+    "dimension": 100,
+    "population": 50,
+    "budget": 60000,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "functions": [
+      "f1_sphere",
+      "f10_levy",
+      "f13_michalewicz",
+      "f26_rotated_griewank",
+      "f7_ackley",
+      "f22_rotated_ellipsoid",
+      "f4_rosenbrock",
+      "f25_composition",
+      "f28_schwefel_1_2",
+      "f29_rotated_schaffer_f7"
+    ],
+    "instance_seed": 42,
+    "w": 0.65,
+    "c1": 2.0,
+    "c2": 2.0,
+    "trace_points": 300,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026,
+    "eta": 0.001,
+    "alpha_mut": 0.05,
+    "theta": 0.5,
+    "lam": 0.4,
+    "stagnation_threshold": 10,
+    "shared_level": 0.5,
+    "shared_openness": "probability",
+    "grid_mode": "one_at_a_time",
+    "pso_m_rate": 0.05,
+    "pso_m_strength": 0.1,
+    "etas": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "thetas": [
+      0,
+      0.3,
+      0.6,
+      0.8,
+      1
+    ],
+    "lambdas": [
+      0.1,
+      0.3,
+      0.6,
+      1,
+      2,
+      4
+    ],
+    "velocity_initialization": "zeros",
+    "coordinatewise_hppso_draws": true,
+    "groups": [
+      "openness_grid"
+    ],
+    "function_selection": {
+      "seed": 20261113,
+      "pool": [
+        "f10_levy",
+        "f14_alpine_1",
+        "f17_bent_cigar",
+        "f18_discus",
+        "f19_penalized_1",
+        "f1_sphere",
+        "f21_expanded_schaffer_f6",
+        "f22_rotated_ellipsoid",
+        "f23_rotated_rastrigin",
+        "f24_rotated_ackley",
+        "f25_composition",
+        "f26_rotated_griewank",
+        "f27_rotated_discus",
+        "f29_rotated_schaffer_f7",
+        "f30_composition_multimodal",
+        "f31_composition_ridges",
+        "f3_zakharov",
+        "f4_rosenbrock",
+        "f6_rastrigin",
+        "f7_ackley",
+        "f8_griewank"
+      ],
+      "method": "uniform without replacement"
+    },
+    "added_function_selection": {
+      "seed": 20261114,
+      "pool": [
+        "f21_expanded_schaffer_f6",
+        "f22_rotated_ellipsoid",
+        "f23_rotated_rastrigin",
+        "f24_rotated_ackley",
+        "f25_composition",
+        "f27_rotated_discus",
+        "f28_schwefel_1_2",
+        "f29_rotated_schaffer_f7",
+        "f30_composition_multimodal"
+      ],
+      "method": "uniform without replacement"
+    },
+    "function_replacements": {
+      "f24_rotated_ackley": "f4_rosenbrock",
+      "f19_penalized_1": "f13_michalewicz"
+    },
+    "function_display_names": {
+      "f1_sphere": "Shifted Sphere",
+      "f10_levy": "Shifted L\u00e9vy",
+      "f13_michalewicz": "Shifted Michalewicz",
+      "f26_rotated_griewank": "Rotated Griewank",
+      "f7_ackley": "Shifted Ackley",
+      "f22_rotated_ellipsoid": "Rotated Ellipsoid",
+      "f4_rosenbrock": "Shifted Rosenbrock",
+      "f25_composition": "Composition",
+      "f28_schwefel_1_2": "Schwefel 1.2",
+      "f29_rotated_schaffer_f7": "Rotated Schaffer F7"
+    },
+    "full_hppso_sensitivity": true,
+    "reuse_comparators": {
+      "HPPSO": {
+        "directory": "experiments/results/ablation_fresh/08_full_factorial",
+        "fingerprint": "72971935aa0ea73173a0c1917b48043eadb3b79f40742fc1efa996713736d5a2"
+      }
+    }
+  },
+  "protocol": {
+    "variants": {
+      "v_e285890a8de95987": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05,
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO"
+      },
+      "v_5d5d37ef4df18c7b": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0,
+          "lam": 0.4,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0, lambda=0.4"
+      },
+      "v_becb9bdccc7957da": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.3,
+          "lam": 0.4,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.3, lambda=0.4"
+      },
+      "v_8a7792d18576e4da": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.5,
+          "lam": 0.1,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.5, lambda=0.1"
+      },
+      "v_f0059bfa87c5252b": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.5,
+          "lam": 0.3,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.5, lambda=0.3"
+      },
+      "v_a4a3e97c20a60e94": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.5,
+          "lam": 0.6,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.5, lambda=0.6"
+      },
+      "v_684dbb52085e0cc4": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.5,
+          "lam": 1,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.5, lambda=1"
+      },
+      "v_dfbc1d955626e53d": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.5,
+          "lam": 2,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.5, lambda=2"
+      },
+      "v_bb003902dfe24e1d": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.5,
+          "lam": 4,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.5, lambda=4"
+      },
+      "v_4b0e6824c1164b36": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.6,
+          "lam": 0.4,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.6, lambda=0.4"
+      },
+      "v_b13d0d3841d04238": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 0.8,
+          "lam": 0.4,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=0.8, lambda=0.4"
+      },
+      "v_38a3913173a473da": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "theta": 1,
+          "lam": 0.4,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05
+        },
+        "label": "HPPSO: theta=1, lambda=0.4"
+      }
+    },
+    "groups": {
+      "openness_grid": [
+        {
+          "variant": "v_e285890a8de95987",
+          "label": "HPPSO",
+          "settings": {
+            "reinitialize": true
+          }
+        },
+        {
+          "variant": "v_5d5d37ef4df18c7b",
+          "label": "HPPSO: theta=0, lambda=0.4",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0,
+            "lam": 0.4,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_becb9bdccc7957da",
+          "label": "HPPSO: theta=0.3, lambda=0.4",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.3,
+            "lam": 0.4,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_8a7792d18576e4da",
+          "label": "HPPSO: theta=0.5, lambda=0.1",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.5,
+            "lam": 0.1,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_f0059bfa87c5252b",
+          "label": "HPPSO: theta=0.5, lambda=0.3",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.5,
+            "lam": 0.3,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_a4a3e97c20a60e94",
+          "label": "HPPSO: theta=0.5, lambda=0.6",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.5,
+            "lam": 0.6,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_684dbb52085e0cc4",
+          "label": "HPPSO: theta=0.5, lambda=1",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.5,
+            "lam": 1,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_dfbc1d955626e53d",
+          "label": "HPPSO: theta=0.5, lambda=2",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.5,
+            "lam": 2,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_bb003902dfe24e1d",
+          "label": "HPPSO: theta=0.5, lambda=4",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.5,
+            "lam": 4,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_4b0e6824c1164b36",
+          "label": "HPPSO: theta=0.6, lambda=0.4",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.6,
+            "lam": 0.4,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_b13d0d3841d04238",
+          "label": "HPPSO: theta=0.8, lambda=0.4",
+          "settings": {
+            "reinitialize": true,
+            "theta": 0.8,
+            "lam": 0.4,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_38a3913173a473da",
+          "label": "HPPSO: theta=1, lambda=0.4",
+          "settings": {
+            "reinitialize": true,
+            "theta": 1,
+            "lam": 0.4,
+            "personalization": "individual"
+          }
+        }
+      ]
+    },
+    "factorial": {},
+    "no_reinitialization": null,
+    "trait_order": [
+      "curiosity",
+      "conformity",
+      "aggressiveness",
+      "openness"
+    ],
+    "baseline": "v_e285890a8de95987"
+  },
+  "fingerprint": "2ec3cd454e3b114489f1df0b4dbc6c0a492cc04b250b1f6e48fc559a74e8cfb9",
+  "shards": 1,
+  "evaluator": "vectorized-nine-v1",
+  "format_version": 1
+}

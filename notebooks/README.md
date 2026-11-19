@@ -1,38 +1,12 @@
-# HPPSO Notebooks
+# HPPSO notebooks
 
-## Tutorial notebooks
+These notebooks are standalone examples. Refer to [the revised paper data](../paper_results/) for the full experimental protocols.
 
-| Notebook | Cleaned version | Description |
-|----------|-----------------|-------------|
-| `01_benchmark_20_functions.ipynb` | `01_benchmark_20_functions_cleaned.ipynb` | 20 shifted classical benchmarks (30D) |
-| `02_benchmark_cec2011.ipynb` | `02_benchmark_cec2011_cleaned.ipynb` | CEC2011 real-world problems |
-| `03_neural_network_training.ipynb` | `03_neural_network_training_cleaned.ipynb` | MLP training with metaheuristics |
+| Notebook | Topic |
+| --- | --- |
+| [Mathematical benchmarks](01_benchmark_20_functions.ipynb) | Classical benchmark tutorial |
+| [CEC2011 benchmarks](02_benchmark_cec2011.ipynb) | Real-world optimization tutorial |
+| [Neural network training](03_neural_network_training.ipynb) | Network training with metaheuristics |
+| [MAGD demo](magd_algorithm_demo.ipynb) | Multi-Agent Gradient Descent |
 
-## Original research notebooks (preserved)
-
-| Original | Cleaned refactor |
-|----------|------------------|
-| `original/HPPSO_Final_Reviiew.ipynb` | `original/HPPSO_Final_Reviiew_cleaned.ipynb` |
-| `original/CEC2011_HPPSO_Review_.ipynb` | `original/CEC2011_HPPSO_Review_cleaned.ipynb` |
-
-Original files are **not modified**. Cleaned copies reorganize the workflow for clarity and reproducibility.
-
-## Shared utilities
-
-- `nb_helpers.py` — path setup, merged data loading, plot style constants.
-
-## Regenerating cleaned notebooks
-
-```bash
-python scripts/build_cleaned_notebooks.py
-```
-
-## Recommended workflow
-
-1. **Paper reproduction (no re-runs):** open `original/HPPSO_Final_Reviiew_cleaned.ipynb` or run `python -m reproduction.run_reproduction`.
-2. **Quick tutorial:** `01_benchmark_20_functions_cleaned.ipynb` with `USE_SAVED_RESULTS = True`.
-3. **Live experiments:** set demo flags only when you intend to re-run optimizers.
-
-## Result file dependencies
-
-See `REPRODUCTION_REPORT.md` for the full list of pickles under `results/`.
+Install the required packages from the repository root with uv sync --extra all.

@@ -1,0 +1,19 @@
+{
+  "source": "D:\\hppso-git\\hppso_results_coordinatewise_hppso (2)\\final_results",
+  "sha256_runs": "2dbeaf9769a15451d7bf287601485a2ba0d3c7c5a1b5a12370e39870a6dab646",
+  "plan_fingerprint": "6c3e178b2e43e4795189ae02ca8157d351de46cba6fb9a6c796740ffa993a33f",
+  "trials": 21600,
+  "blocks": 120,
+  "seeds": 20,
+  "significant_pairs": 3936,
+  "total_pairs": 4320,
+  "numerical_std_ddof": 1,
+  "numerical_std_method": "Rescale deviations from the first score before variance calculation to avoid underflow",
+  "signed_rank": "Exact sign enumeration by subset-sum dynamic programming; zeros omitted; average tied ranks",
+  "within_function_family": "36 two-sided comparisons, Holm 0.05, independently in each function-dimension block",
+  "rank": "Descending significant wins minus losses against eight opponents; average rank for equal net scores",
+  "friedman": "30 function blocks per dimension; one mean over 20 seeds per algorithm and block; tie-corrected chi-square, df=8",
+  "posthoc": "Nemenyi all 36 pairs within each dimension; studentized range with infinite df; alpha=.05",
+  "omnibus_multiplicity": "Holm across four dimensions; dimensions not pooled as independent replications",
+  "methods_reference": "https://www.jmlr.org/papers/v7/demsar06a.html"
+}

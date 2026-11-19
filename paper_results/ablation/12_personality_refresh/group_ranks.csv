@@ -1,0 +1,21 @@
+function,group,variant,label,rank
+f1_sphere,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f1_sphere,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f10_levy,personality_refresh,v_e285890a8de95987,HPPSO,2.0
+f10_levy,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,1.0
+f13_michalewicz,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f13_michalewicz,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f26_rotated_griewank,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f26_rotated_griewank,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f7_ackley,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f7_ackley,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f22_rotated_ellipsoid,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f22_rotated_ellipsoid,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f4_rosenbrock,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f4_rosenbrock,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f25_composition,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f25_composition,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f28_schwefel_1_2,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f28_schwefel_1_2,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0
+f29_rotated_schaffer_f7,personality_refresh,v_e285890a8de95987,HPPSO,1.0
+f29_rotated_schaffer_f7,personality_refresh,v_d0db2551b0d8edc8,HPPSO without personality reinitialization,2.0

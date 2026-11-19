@@ -69,4 +69,4 @@ This repository compares HPPSO against:
 
 ## References
 
-See the manuscript in [`docs/papers/HPPSO_Manuscript.pdf`](papers/HPPSO_Manuscript.pdf) for the full theoretical treatment and experimental results.
+See [the revised benchmark data and reproduction notes](../paper_results/README.md) for the experimental protocols and results.

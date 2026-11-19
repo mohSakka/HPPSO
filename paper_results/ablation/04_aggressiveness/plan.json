@@ -1,0 +1,218 @@
+{
+  "config": {
+    "dimension": 100,
+    "population": 50,
+    "budget": 60000,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "functions": [
+      "f1_sphere",
+      "f10_levy",
+      "f13_michalewicz",
+      "f26_rotated_griewank",
+      "f7_ackley",
+      "f22_rotated_ellipsoid",
+      "f4_rosenbrock",
+      "f25_composition",
+      "f28_schwefel_1_2",
+      "f29_rotated_schaffer_f7"
+    ],
+    "instance_seed": 42,
+    "w": 0.65,
+    "c1": 2.0,
+    "c2": 2.0,
+    "trace_points": 300,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026,
+    "eta": 0.001,
+    "alpha_mut": 0.05,
+    "theta": 0.5,
+    "lam": 0.4,
+    "stagnation_threshold": 10,
+    "shared_level": 0.5,
+    "shared_openness": "probability",
+    "grid_mode": "one_at_a_time",
+    "pso_m_rate": 0.05,
+    "pso_m_strength": 0.1,
+    "etas": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "thetas": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "lambdas": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "velocity_initialization": "zeros",
+    "coordinatewise_hppso_draws": true,
+    "groups": [
+      "aggressiveness"
+    ],
+    "function_selection": {
+      "seed": 20261113,
+      "pool": [
+        "f10_levy",
+        "f14_alpine_1",
+        "f17_bent_cigar",
+        "f18_discus",
+        "f19_penalized_1",
+        "f1_sphere",
+        "f21_expanded_schaffer_f6",
+        "f22_rotated_ellipsoid",
+        "f23_rotated_rastrigin",
+        "f24_rotated_ackley",
+        "f25_composition",
+        "f26_rotated_griewank",
+        "f27_rotated_discus",
+        "f29_rotated_schaffer_f7",
+        "f30_composition_multimodal",
+        "f31_composition_ridges",
+        "f3_zakharov",
+        "f4_rosenbrock",
+        "f6_rastrigin",
+        "f7_ackley",
+        "f8_griewank"
+      ],
+      "method": "uniform without replacement"
+    },
+    "added_function_selection": {
+      "seed": 20261114,
+      "pool": [
+        "f21_expanded_schaffer_f6",
+        "f22_rotated_ellipsoid",
+        "f23_rotated_rastrigin",
+        "f24_rotated_ackley",
+        "f25_composition",
+        "f27_rotated_discus",
+        "f28_schwefel_1_2",
+        "f29_rotated_schaffer_f7",
+        "f30_composition_multimodal"
+      ],
+      "method": "uniform without replacement"
+    },
+    "function_replacements": {
+      "f24_rotated_ackley": "f4_rosenbrock",
+      "f19_penalized_1": "f13_michalewicz"
+    },
+    "function_display_names": {
+      "f1_sphere": "Shifted Sphere",
+      "f10_levy": "Shifted L\u00e9vy",
+      "f13_michalewicz": "Shifted Michalewicz",
+      "f26_rotated_griewank": "Rotated Griewank",
+      "f7_ackley": "Shifted Ackley",
+      "f22_rotated_ellipsoid": "Rotated Ellipsoid",
+      "f4_rosenbrock": "Shifted Rosenbrock",
+      "f25_composition": "Composition",
+      "f28_schwefel_1_2": "Schwefel 1.2",
+      "f29_rotated_schaffer_f7": "Rotated Schaffer F7"
+    }
+  },
+  "protocol": {
+    "variants": {
+      "v_ee371b261d26fa79": {
+        "spec": {
+          "backbone": "pso",
+          "traits": []
+        },
+        "label": "PSO"
+      },
+      "v_68f198e7b6fb6e4d": {
+        "spec": {
+          "backbone": "pso",
+          "traits": [
+            "aggressiveness"
+          ],
+          "personalization": "individual"
+        },
+        "label": "PSO-aggressiveness"
+      },
+      "v_31ed1a1c9737e0b3": {
+        "spec": {
+          "backbone": "pso",
+          "traits": [],
+          "riw": true
+        },
+        "label": "PSO-RIW"
+      }
+    },
+    "groups": {
+      "aggressiveness": [
+        {
+          "variant": "v_ee371b261d26fa79",
+          "label": "PSO",
+          "settings": {}
+        },
+        {
+          "variant": "v_68f198e7b6fb6e4d",
+          "label": "PSO-aggressiveness",
+          "settings": {}
+        },
+        {
+          "variant": "v_31ed1a1c9737e0b3",
+          "label": "PSO-RIW",
+          "settings": {
+            "riw": true
+          }
+        }
+      ]
+    },
+    "factorial": {
+      "0": "v_a4f261e7bf26d253",
+      "1": "v_76a05dd4346bdbbe",
+      "2": "v_ed6c9c2554e71fd0",
+      "3": "v_0268d9f444df63d6",
+      "4": "v_5a921787b6292f39",
+      "5": "v_9f5ad3b63d48d086",
+      "6": "v_84f8dc0991d22585",
+      "7": "v_3c201cfab8636926",
+      "8": "v_21773dff45f06695",
+      "9": "v_89ecf01d0d8f6a43",
+      "10": "v_1f4b39dea7edc91c",
+      "11": "v_eb903a7ce1021189",
+      "12": "v_53d9563d02f919e5",
+      "13": "v_a2d4ce1b80425c15",
+      "14": "v_8d07f005a81ba08b",
+      "15": "v_e285890a8de95987"
+    },
+    "no_reinitialization": "v_d0db2551b0d8edc8",
+    "trait_order": [
+      "curiosity",
+      "conformity",
+      "aggressiveness",
+      "openness"
+    ],
+    "baseline": "v_ee371b261d26fa79"
+  },
+  "fingerprint": "f3dacac08fe4d93cc5eb00c78b23a0ef11da2ee40f2b266c98729354373df545",
+  "shards": 1,
+  "evaluator": "vectorized-nine-v1",
+  "format_version": 1
+}

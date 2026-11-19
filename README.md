@@ -1,7 +1,7 @@
 # HPPSO
 
 Human Personality based Particle Swarm Optimization — a PSO variant driven by
-four personality traits (curiosity, confidence, aggressiveness, openness),
+four personality traits (curiosity, conformity, aggressiveness, openness),
 benchmarked against PSO, PSO-m, PSO-RIW, GA-MPC, GWO, SHADE, CMA-ES,
 Sep-CMA-ES, and CSA on 20 shifted classical functions plus ten additional hard problems, and the CEC2011 suite.
 
@@ -79,34 +79,27 @@ See [experiments/README.md](experiments/README.md) for the full config
 schema and the four shipped configs (`classical_30d`, `classical_1000d`,
 `cec2011`, `nn_diabetes`).
 
-## Layout
+## Repository layout
 
-```
-src/hppso/        # Library: algorithms, benchmarks, runners, nn, utils
-experiments/      # YAML-driven harness (configs/, run.py, plots.py)
-reproduction/     # Paper-reproduction pipeline (reads pickles in results/)
-notebooks/        # Cleaned tutorial notebooks
-docs/             # Algorithm description + manuscript PDF
-artifacts/        # Pre-generated outputs, originals, superseded files
-```
+- [src/hppso/](src/hppso/) contains the algorithms, benchmark definitions, and runners.
+- [experiments/](experiments/) contains research protocols, configurations, and analysis scripts.
+- [paper_results/](paper_results/) contains the revised paper results and their provenance.
+- [notebooks/](notebooks/) contains standalone tutorials and the MAGD demonstration.
+- [tests/](tests/) contains regression tests.
 
-## Reproducing paper figures and tables
+## Reproducing the revised results
 
-Drop the original pickles in `results/` (gitignored) and run:
+Start with [the data and reproduction notes](paper_results/README.md). The
+mathematical benchmark uses 30 functions at 30, 300, 600, and 1000 dimensions,
+20 seeds per setting, and 1,000 objective evaluations per dimension. The
+CEC2011 and neural-network studies use their own protocols. Run scripts retain
+their experiment paths for working with the full trial archives.
 
-```bash
-uv run python -m reproduction.run_reproduction
-```
-
-Figures and tables land in `artifacts/reproduced_figures/` and
-`artifacts/reproduced_tables/`. See [artifacts/REPRODUCTION_REPORT.md](artifacts/REPRODUCTION_REPORT.md)
-for the paper-vs-reproduced coverage matrix.
-
-## Documentation
-
-- Algorithm description: [docs/algorithm.md](docs/algorithm.md)
-- Manuscript: [docs/papers/HPPSO_Manuscript.pdf](docs/papers/HPPSO_Manuscript.pdf)
-- Experiment harness: [experiments/README.md](experiments/README.md)
+For the algorithm and protocols, see [the HPPSO description](docs/algorithm.md),
+[the mathematical benchmark guide](docs/final_benchmark.md), and
+[the experiment harness](experiments/README.md).
+The earlier pickle-based reproduction utilities are retained for historical
+archives and regression tests.
 
 ## Numerical evaluation
 
@@ -151,42 +144,8 @@ for all 30 or `build_additional_suite` for just the additions. See the
 Archived results containing retired variants remain historical records; their
 scores are not relabelled as results for the new functions.
 
-## Representative dimensional experiments
+## Research protocols
 
-Run `uv run hppso-run-experiment scaling` for dimensions 100–1000 on the five
-additional hard functions, including structured rotations and a three-center
-composition. Both proportional and fixed evaluation budgets are supported, with
-actual evaluation counting and median/IQR trend plots. See
-[the experiment definitions and interpretation](docs/scaling_experiments.md).
-
-## Final server benchmark
-
-The final protocol uses dimensions 30/300/600/1000, exactly `1000*D` objective
-evaluations, increasing populations, and 20 seeds across all 30 functions.
-CMA-ES is used only at 30D, replaced by Sep-CMA-ES at higher dimensions.
-See [server setup, resumable runs, SLURM and report commands](docs/final_benchmark.md).
-
-## Isolated openness ablation
-
-Compare standard PSO with four isolated openness rules at 100D on shifted Sphere,
-Rosenbrock, Levy and Ackley: 10 matched seeds, 50 particles, 100,000 evaluations.
-Run `python -u -m experiments.openness_ablation --workers 4` to save raw trials,
-timings, paired comparisons and convergence plots with bootstrap confidence bands.
-See [protocol, uncertainty and output definitions](docs/openness_ablation.md).
-The final selection adds Expanded Schaffer F6, rotated ellipsoid, rotated
-Rastrigin, rotated Ackley and one composition function. Use
-`experiments/configs/openness_ablation_final9.json` for all nine functions with
-the same 100D protocol. Reports paginate across every selected function.
-
-## Four-trait studies
-
-The curiosity, aggressiveness, openness, conformity and factorial HPPSO studies
-use 59 independent vectorized paths per seed/function. The selected full study
-uses shifted Sphere, rotated Rastrigin and one composition at 100D, ten seeds
-and 100,000 evaluations per path. Parameters vary one at a time; all 16 trait
-combinations support interaction matrices and leave-one-trait-out ablations.
-See [protocol, local/server commands and interpretation](docs/trait_study.md).
-The expanded trait study adds five reproducibly sampled shifted cases, three
-rotated cases and two compositions. `python -m experiments.run_trait_extension`
-runs the local continuation, combines all 13 functions, audits and packages the
-results while preserving the completed original trials.
+- [Final mathematical benchmark](docs/final_benchmark.md) covers the four dimensions and the resumable runner.
+- [CEC2011 and neural-network data](paper_results/README.md) identify the final trial settings and result files.
+- [Component and sensitivity configurations](experiments/configs/) and [diversity protocols](docs/diversity_study.md) document the supporting studies.

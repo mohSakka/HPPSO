@@ -1,0 +1,448 @@
+{
+  "config": {
+    "dimension": 100,
+    "population": 50,
+    "budget": 60000,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "functions": [
+      "f4_rosenbrock",
+      "f29_rotated_schaffer_f7",
+      "f1_sphere"
+    ],
+    "instance_seed": 42,
+    "w": 0.65,
+    "c1": 2.0,
+    "c2": 2.0,
+    "trace_points": 300,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026,
+    "eta": 0.001,
+    "alpha_mut": 0.05,
+    "theta": 0.5,
+    "lam": 0.4,
+    "stagnation_threshold": 10,
+    "shared_level": 0.5,
+    "shared_openness": "probability",
+    "grid_mode": "one_at_a_time",
+    "pso_m_rate": 0.05,
+    "pso_m_strength": 0.1,
+    "etas": [
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1
+    ],
+    "alphas": [
+      0.001,
+      0.01,
+      0.05,
+      0.1,
+      0.5,
+      1
+    ],
+    "thetas": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "lambdas": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      1.0
+    ],
+    "velocity_initialization": "zeros",
+    "coordinatewise_hppso_draws": true,
+    "groups": [
+      "curiosity_grid"
+    ],
+    "function_selection": {
+      "seed": 20261113,
+      "pool": [
+        "f10_levy",
+        "f14_alpine_1",
+        "f17_bent_cigar",
+        "f18_discus",
+        "f19_penalized_1",
+        "f1_sphere",
+        "f21_expanded_schaffer_f6",
+        "f22_rotated_ellipsoid",
+        "f23_rotated_rastrigin",
+        "f24_rotated_ackley",
+        "f25_composition",
+        "f26_rotated_griewank",
+        "f27_rotated_discus",
+        "f29_rotated_schaffer_f7",
+        "f30_composition_multimodal",
+        "f31_composition_ridges",
+        "f3_zakharov",
+        "f4_rosenbrock",
+        "f6_rastrigin",
+        "f7_ackley",
+        "f8_griewank"
+      ],
+      "method": "uniform without replacement"
+    },
+    "added_function_selection": {
+      "seed": 20261114,
+      "pool": [
+        "f21_expanded_schaffer_f6",
+        "f22_rotated_ellipsoid",
+        "f23_rotated_rastrigin",
+        "f24_rotated_ackley",
+        "f25_composition",
+        "f27_rotated_discus",
+        "f28_schwefel_1_2",
+        "f29_rotated_schaffer_f7",
+        "f30_composition_multimodal"
+      ],
+      "method": "uniform without replacement"
+    },
+    "function_replacements": {
+      "f24_rotated_ackley": "f4_rosenbrock",
+      "f19_penalized_1": "f13_michalewicz"
+    },
+    "function_display_names": {
+      "f1_sphere": "Shifted Sphere",
+      "f10_levy": "Shifted L\u00e9vy",
+      "f13_michalewicz": "Shifted Michalewicz",
+      "f26_rotated_griewank": "Rotated Griewank",
+      "f7_ackley": "Shifted Ackley",
+      "f22_rotated_ellipsoid": "Rotated Ellipsoid",
+      "f4_rosenbrock": "Shifted Rosenbrock",
+      "f25_composition": "Composition",
+      "f28_schwefel_1_2": "Schwefel 1.2",
+      "f29_rotated_schaffer_f7": "Rotated Schaffer F7"
+    },
+    "full_hppso_sensitivity": true,
+    "reuse_comparators": {
+      "HPPSO": {
+        "directory": "experiments/results/ablation_fresh/08_full_factorial",
+        "fingerprint": "72971935aa0ea73173a0c1917b48043eadb3b79f40742fc1efa996713736d5a2"
+      }
+    }
+  },
+  "protocol": {
+    "variants": {
+      "v_e285890a8de95987": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "personalization": "individual",
+          "eta": 0.001,
+          "alpha_mut": 0.05,
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO"
+      },
+      "v_1e65b82a58188de1": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 1e-05,
+          "alpha_mut": 0.05,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=1e-05, alpha=0.05"
+      },
+      "v_2eee48369879f0b0": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.0001,
+          "alpha_mut": 0.05,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.0001, alpha=0.05"
+      },
+      "v_519bb651854b81b9": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.001,
+          "alpha_mut": 0.001,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.001, alpha=0.001"
+      },
+      "v_7026a3160e7aa284": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.001,
+          "alpha_mut": 0.01,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.001, alpha=0.01"
+      },
+      "v_06aed1f1d418dacd": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.001,
+          "alpha_mut": 0.1,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.001, alpha=0.1"
+      },
+      "v_fc0b36dc95132948": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.001,
+          "alpha_mut": 0.5,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.001, alpha=0.5"
+      },
+      "v_2ee86191f10e4ffa": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.001,
+          "alpha_mut": 1,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.001, alpha=1"
+      },
+      "v_454aa21435083d61": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.01,
+          "alpha_mut": 0.05,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.01, alpha=0.05"
+      },
+      "v_bd749ac528c23d68": {
+        "spec": {
+          "backbone": "hp",
+          "traits": [
+            "aggressiveness",
+            "conformity",
+            "curiosity",
+            "openness"
+          ],
+          "reinitialize": true,
+          "eta": 0.1,
+          "alpha_mut": 0.05,
+          "personalization": "individual",
+          "theta": 0.5,
+          "lam": 0.4
+        },
+        "label": "HPPSO: eta=0.1, alpha=0.05"
+      }
+    },
+    "groups": {
+      "curiosity_grid": [
+        {
+          "variant": "v_e285890a8de95987",
+          "label": "HPPSO",
+          "settings": {
+            "reinitialize": true
+          }
+        },
+        {
+          "variant": "v_1e65b82a58188de1",
+          "label": "HPPSO: eta=1e-05, alpha=0.05",
+          "settings": {
+            "reinitialize": true,
+            "eta": 1e-05,
+            "alpha_mut": 0.05,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_2eee48369879f0b0",
+          "label": "HPPSO: eta=0.0001, alpha=0.05",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.0001,
+            "alpha_mut": 0.05,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_519bb651854b81b9",
+          "label": "HPPSO: eta=0.001, alpha=0.001",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.001,
+            "alpha_mut": 0.001,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_7026a3160e7aa284",
+          "label": "HPPSO: eta=0.001, alpha=0.01",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.001,
+            "alpha_mut": 0.01,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_e285890a8de95987",
+          "label": "HPPSO: eta=0.001, alpha=0.05",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.001,
+            "alpha_mut": 0.05,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_06aed1f1d418dacd",
+          "label": "HPPSO: eta=0.001, alpha=0.1",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.001,
+            "alpha_mut": 0.1,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_fc0b36dc95132948",
+          "label": "HPPSO: eta=0.001, alpha=0.5",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.001,
+            "alpha_mut": 0.5,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_2ee86191f10e4ffa",
+          "label": "HPPSO: eta=0.001, alpha=1",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.001,
+            "alpha_mut": 1,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_454aa21435083d61",
+          "label": "HPPSO: eta=0.01, alpha=0.05",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.01,
+            "alpha_mut": 0.05,
+            "personalization": "individual"
+          }
+        },
+        {
+          "variant": "v_bd749ac528c23d68",
+          "label": "HPPSO: eta=0.1, alpha=0.05",
+          "settings": {
+            "reinitialize": true,
+            "eta": 0.1,
+            "alpha_mut": 0.05,
+            "personalization": "individual"
+          }
+        }
+      ]
+    },
+    "factorial": {},
+    "no_reinitialization": null,
+    "trait_order": [
+      "curiosity",
+      "conformity",
+      "aggressiveness",
+      "openness"
+    ],
+    "baseline": "v_e285890a8de95987"
+  },
+  "fingerprint": "f64cdaa2fa00ccb6c18b2c852f0a81f3bc3954b58c6549549aaef2c9dfc6f56e",
+  "shards": 1,
+  "evaluator": "vectorized-nine-v1",
+  "format_version": 1
+}

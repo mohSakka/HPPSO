@@ -1,0 +1,51 @@
+function,group,variant,label,rank
+f1_sphere,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,4.0
+f1_sphere,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,2.0
+f1_sphere,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,3.0
+f1_sphere,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,5.0
+f1_sphere,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,1.0
+f10_levy,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,2.0
+f10_levy,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,3.0
+f10_levy,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,1.0
+f10_levy,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,4.0
+f10_levy,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,5.0
+f13_michalewicz,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,1.0
+f13_michalewicz,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,2.0
+f13_michalewicz,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,3.0
+f13_michalewicz,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,5.0
+f13_michalewicz,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,4.0
+f26_rotated_griewank,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,4.0
+f26_rotated_griewank,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,1.0
+f26_rotated_griewank,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,3.0
+f26_rotated_griewank,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,5.0
+f26_rotated_griewank,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,2.0
+f7_ackley,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,2.0
+f7_ackley,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,4.0
+f7_ackley,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,1.0
+f7_ackley,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,3.0
+f7_ackley,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,5.0
+f22_rotated_ellipsoid,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,2.0
+f22_rotated_ellipsoid,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,4.0
+f22_rotated_ellipsoid,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,1.0
+f22_rotated_ellipsoid,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,3.0
+f22_rotated_ellipsoid,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,5.0
+f4_rosenbrock,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,3.0
+f4_rosenbrock,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,1.0
+f4_rosenbrock,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,2.0
+f4_rosenbrock,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,4.0
+f4_rosenbrock,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,5.0
+f25_composition,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,3.0
+f25_composition,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,4.0
+f25_composition,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,1.0
+f25_composition,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,2.0
+f25_composition,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,5.0
+f28_schwefel_1_2,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,3.0
+f28_schwefel_1_2,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,4.0
+f28_schwefel_1_2,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,1.0
+f28_schwefel_1_2,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,2.0
+f28_schwefel_1_2,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,5.0
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,v_e285890a8de95987,HPPSO,2.0
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,v_98c150f32799e97a,HPPSO-openness-better,3.0
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,v_7f0adbaca0f251af,HPPSO-openness-random,1.0
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,v_2c0e05f6173a8223,HPPSO-worse-current,4.0
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,v_3c201cfab8636926,HPPSO without openness,5.0

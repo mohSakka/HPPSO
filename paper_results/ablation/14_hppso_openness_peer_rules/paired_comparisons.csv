@@ -1,0 +1,51 @@
+function,group,label,reference,median_paired_difference,ci95_low,ci95_high,wins,ties,losses
+f1_sphere,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f1_sphere,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,-0.0036367180715697546,-0.004639695335184022,-0.002903473000525025,10,0,0
+f1_sphere,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-0.0013125570375691065,-0.004211333756833271,0.0014614196929514049,6,0,4
+f1_sphere,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,0.0021317439141532455,0.0006740758499969401,0.0060783019433259255,1,0,9
+f1_sphere,hppso_openness_peer_rules,HPPSO without openness,HPPSO,-0.004911439136645015,-0.006105451922772116,-0.0030617106504368455,10,0,0
+f10_levy,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f10_levy,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,1.9437956661196392,-4.773580163633909,7.000494581010383,4,0,6
+f10_levy,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-4.431427061640664,-7.828775473164409,-0.7337477467909722,8,0,2
+f10_levy,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,5.548101238191416,1.0073016901024516,7.936088437684308,1,0,9
+f10_levy,hppso_openness_peer_rules,HPPSO without openness,HPPSO,16.793936283057278,12.816212638595793,24.177218853631622,0,0,10
+f13_michalewicz,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f13_michalewicz,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,0.9441881489720458,-1.3355903601834171,5.580949173175696,3,0,7
+f13_michalewicz,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,1.9464392566129831,-3.395613583999271,5.363046677113317,4,0,6
+f13_michalewicz,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,3.7166004495146368,-1.6905298892950285,10.311911868376171,3,0,7
+f13_michalewicz,hppso_openness_peer_rules,HPPSO without openness,HPPSO,0.5856059672507783,-3.6276409682935573,6.251957777722652,4,0,6
+f26_rotated_griewank,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f26_rotated_griewank,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,-0.009895331382620609,-0.022569457574963536,0.0005672080710142913,8,0,2
+f26_rotated_griewank,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-0.013387746656046529,-0.020440532060722938,0.00382681893508241,7,0,3
+f26_rotated_griewank,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,0.011413920515590703,-0.0016693010981920775,0.02092046992299995,4,0,6
+f26_rotated_griewank,hppso_openness_peer_rules,HPPSO without openness,HPPSO,-0.01343025859855379,-0.029373791490062806,-0.002251158029886513,8,0,2
+f7_ackley,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f7_ackley,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,2.95821651059224,0.8346669645255087,4.050895905539341,2,0,8
+f7_ackley,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-1.1436850869630346,-2.183916675181637,0.0561027077537517,7,0,3
+f7_ackley,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,1.3138010644986169,0.008997154697681253,3.327631322449945,2,0,8
+f7_ackley,hppso_openness_peer_rules,HPPSO without openness,HPPSO,4.351913165920974,2.8119958675677044,5.50704189888254,0,0,10
+f22_rotated_ellipsoid,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f22_rotated_ellipsoid,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,845303.7649171492,215256.926745896,2953652.3586005783,2,0,8
+f22_rotated_ellipsoid,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-1324802.3399934946,-2009913.8465358517,-447084.2151316211,8,0,2
+f22_rotated_ellipsoid,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,1103432.8165595748,-377418.8219905435,2921984.012704595,3,0,7
+f22_rotated_ellipsoid,hppso_openness_peer_rules,HPPSO without openness,HPPSO,4994322.004739355,2764759.7523360504,7932846.696677957,1,0,9
+f4_rosenbrock,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f4_rosenbrock,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,-0.19886543203308804,-51.782024924864146,75.48994123591339,5,0,5
+f4_rosenbrock,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-3.5389600258217513,-52.38768791827991,70.63107950228358,6,0,4
+f4_rosenbrock,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,25.880386909395597,-43.452428884188976,120.8709737669736,5,0,5
+f4_rosenbrock,hppso_openness_peer_rules,HPPSO without openness,HPPSO,34.067416512146224,-1.8936184444494017,100.42928644799454,3,0,7
+f25_composition,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f25_composition,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,1286.0333365623706,172.46115159770397,1896.014317238294,2,0,8
+f25_composition,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-3275.2261356344534,-6089.431090562772,-1302.9939379332027,9,0,1
+f25_composition,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,530.0059965043629,-529.8431094633197,1546.02095697515,3,0,7
+f25_composition,hppso_openness_peer_rules,HPPSO without openness,HPPSO,7737.017822633841,4719.688638952202,13624.102155467885,0,0,10
+f28_schwefel_1_2,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f28_schwefel_1_2,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,317.72798517402515,-304.25118370392454,704.2247070122489,3,0,7
+f28_schwefel_1_2,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-533.5015506322679,-726.6623859241142,-269.96293530560195,10,0,0
+f28_schwefel_1_2,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,-91.97146471874481,-213.3715331075254,271.47710816381993,6,0,4
+f28_schwefel_1_2,hppso_openness_peer_rules,HPPSO without openness,HPPSO,3001.2137243177076,1799.6758487861775,3881.7088988888163,0,0,10
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,HPPSO-openness-better,HPPSO,1.8283599842359912,-0.4545414803939778,4.183276188773238,4,0,6
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,HPPSO-openness-random,HPPSO,-2.183407672165613,-3.4092589141667347,-0.5164480871178085,9,0,1
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,HPPSO-worse-current,HPPSO,1.4949928539722865,0.47342512152139804,3.0196121569293553,2,0,8
+f29_rotated_schaffer_f7,hppso_openness_peer_rules,HPPSO without openness,HPPSO,11.267575507053655,9.382209024933395,12.105860460163308,0,0,10

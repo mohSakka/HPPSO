@@ -28,7 +28,7 @@ def exact_signed_rank(differences):
 def report(source):
     plan = json.loads((source / 'plan.json').read_text(encoding='utf-8'))
     cfg = plan['config']
-    runs = pd.read_csv(source / 'runs.csv')
+    runs = pd.read_csv(source / 'runs.csv', float_precision='round_trip')
     ranks, pairs = [], []
     for dim in cfg['dimensions']:
         names = plan['algorithms'][str(dim)]

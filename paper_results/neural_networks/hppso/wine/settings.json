@@ -1,0 +1,76 @@
+{
+  "datasets": [
+    "wine"
+  ],
+  "algorithms": [
+    "HPPSO"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "population": 30,
+  "evaluations": 3000,
+  "bounds": [
+    -2.0,
+    2.0
+  ],
+  "split_seed": 42,
+  "california_subsample_seed": 42,
+  "split": [
+    0.6,
+    0.2,
+    0.2
+  ],
+  "preprocessing": "median imputation and standardization fitted on training data only",
+  "classification_targets": "one-hot",
+  "architecture": "floor(2 * previous_width / 3)",
+  "hidden_activation": "sigmoid",
+  "output_activation": {
+    "classification": "softmax",
+    "regression": "linear"
+  },
+  "training_loss": {
+    "classification": "cross-entropy",
+    "regression": "standardized-target MSE"
+  },
+  "adam": {
+    "learning_rate": 0.001,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-08,
+    "batch": "full"
+  },
+  "magd": {
+    "learning_rate": 0.03,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "convergence_tolerance": 0.0001,
+    "convergence_window": 10,
+    "reduction_interval": 10,
+    "source": "notebooks/magd_algorithm_demo.ipynb",
+    "batch": "full",
+    "stopping_rule": "objective evaluation budget only"
+  },
+  "model_selection": "best training loss at the evaluation budget",
+  "budget_unit": "one full-training-set loss evaluation, including fused loss-and-gradient calls",
+  "sample_cap": 2000,
+  "subsample_seed": 42,
+  "hppso_parameters": {
+    "socialism_threshold": 0.4,
+    "alpha_curio": 0.08,
+    "eta": 0.03,
+    "lam": 0.6,
+    "stagnation_threshold": 5
+  }
+}

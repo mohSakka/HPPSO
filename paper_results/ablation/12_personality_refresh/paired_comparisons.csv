@@ -1,0 +1,21 @@
+function,group,label,reference,median_paired_difference,ci95_low,ci95_high,wins,ties,losses
+f1_sphere,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f1_sphere,personality_refresh,HPPSO without personality reinitialization,HPPSO,0.04579807935787856,0.025880294700595267,0.07515813991359457,0,0,10
+f10_levy,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f10_levy,personality_refresh,HPPSO without personality reinitialization,HPPSO,-3.2334462157641024,-4.09076240605547,-1.255768342485359,9,0,1
+f13_michalewicz,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f13_michalewicz,personality_refresh,HPPSO without personality reinitialization,HPPSO,7.362182613919018,2.659055231842025,10.026034257210341,2,0,8
+f26_rotated_griewank,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f26_rotated_griewank,personality_refresh,HPPSO without personality reinitialization,HPPSO,0.0867619687141789,0.055798067051440914,0.12790835883309037,0,0,10
+f7_ackley,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f7_ackley,personality_refresh,HPPSO without personality reinitialization,HPPSO,-0.7542227585205028,-1.4588845189201214,1.709553217095518,6,0,4
+f22_rotated_ellipsoid,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f22_rotated_ellipsoid,personality_refresh,HPPSO without personality reinitialization,HPPSO,1913767.301656635,1134450.0552902354,2493630.1236548033,0,0,10
+f4_rosenbrock,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f4_rosenbrock,personality_refresh,HPPSO without personality reinitialization,HPPSO,82.67330281414532,-6.078736476553729,125.16245297512286,3,0,7
+f25_composition,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f25_composition,personality_refresh,HPPSO without personality reinitialization,HPPSO,4804.247458046943,2365.393441399522,9227.566000786963,0,0,10
+f28_schwefel_1_2,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f28_schwefel_1_2,personality_refresh,HPPSO without personality reinitialization,HPPSO,1452.5259641603243,1194.6563854870951,1857.8202012410197,0,0,10
+f29_rotated_schaffer_f7,personality_refresh,HPPSO,HPPSO,0.0,0.0,0.0,0,10,0
+f29_rotated_schaffer_f7,personality_refresh,HPPSO without personality reinitialization,HPPSO,1.1573344973972812,0.4107963037471922,1.7904444059445073,1,0,9

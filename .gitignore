@@ -36,3 +36,15 @@ Thumbs.db
 # Pickles and zips are inputs to reproduction (kept out of git)
 *.pkl
 *.zip
+
+# Local environments, experiment archives, and manuscript working files
+/.deps/
+/.pytest_cache/
+/hppso_results_coordinatewise_hppso (2)/
+/hppso_final_results/
+/Springer_Nature_LaTeX_Template (6)/
+/experiments/openness_mechanism/results*/
+/experiments/openness_mechanism/coverage_results*/
+/experiments/openness_mechanism/full_run_coverage_*/
+/output/
+/tmp/
